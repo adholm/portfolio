@@ -4,138 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adam Holm | Portfolio</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <style>
-        /* Grundinställningar */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #ffffff;
-            color: #1d1d1f; /* mörkgrå */
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 100px auto;
-            padding: 0 20px;
-        }
-
-        /* Header & Kontakt */
-        header {
-            margin-bottom: 60px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 10px;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .contact-links a {
-            color: #86868b; /* Ljusare grå för sekundär info */
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
-        }
-
-        .contact-links a:hover {
-            color: #0066cc; /* Klassisk blå vid hover */
-        }
-
-        /* Sektioner */
-        section {
-            margin-bottom: 50px;
-        }
-
-        h2 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #86868b;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        p {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: #333333;
-        }
-
-        .skills-list {
-            list-style: none;
-        }
-
-        .project-item {
-            margin-bottom: 20px;
-        }
-
-        .project-title {
-            font-weight: 600;
-            display: block;
-        }
-
-        /* Enkel responsivitet */
-        @media (max-width: 600px) {
-            .container {
-                margin: 50px auto;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.284.0"></script>
+    
+    <script>
+        // Konfigurerar Tailwind att använda Inter som standard-typsnitt
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    },
+                }
             }
-            h1 { font-size: 2rem; }
         }
-    </style>
+    </script>
 </head>
-<body>
+<body class="bg-white text-[#1d1d1f] antialiased">
 
-    <div class="container">
-        <header>
-            <h1>Adam Holm</h1>
-            <div class="contact-links">
-                <a href="mailto:din@mail.se">Email</a>
-                <a href="https://github.com/adholm">GitHub</a>
-                <a href="https://linkedin.com/in/dittnamn">LinkedIn</a>
-            </div>
+    <div class="max-w-[600px] mx-auto mt-24 mb-24 px-5">
+        
+        <header class="mb-16">
+            <h1 class="text-4xl font-semibold tracking-tight mb-2 hover:tracking-widest transition-all duration-700">Adam Holm</h1> 
+            
+            <div class="flex gap-6 mt-6">
+    <a href="mailto:din@mail.se" class="flex items-center gap-2 text-[#86868b] text-sm hover:text-[#0066cc] transition-colors group">
+        <i data-lucide="mail" class="w-4 h-4"></i>
+        <span>Mail</span>
+    </a>
+
+    <a href="https://github.com/adholm" class="flex items-center gap-2 text-[#86868b] text-sm hover:text-[#0066cc] transition-colors group">
+        <i data-lucide="github" class="w-4 h-4"></i>
+        <span>GitHub</span>
+    </a>
+
+    <a href="https://linkedin.com/in/dittnamn" class="flex items-center gap-2 text-[#86868b] text-sm hover:text-[#0066cc] transition-colors group">
+        <i data-lucide="linkedin" class="w-4 h-4"></i>
+        <span>LinkedIn</span>
+    </a>
+</div>
+
         </header>
 
         <main>
-            <section id="om">
-                <h2>Om</h2>
-                <p>
+            <section class="mb-12">
+                <h2 class="text-[0.85rem] uppercase tracking-[0.1em] text-[#86868b] font-semibold mb-4">Om</h2>
+                <p class="text-lg font-light text-[#333333]">
                     Linux Engineer med passion för infrastruktur och automation. 
                     Fokuserad på att bygga stabila och skalbara systemlösningar.
                 </p>
             </section>
 
-            <section id="fardigheter">
-                <h2>Färdigheter</h2>
-                <p>Linux Administration, Nginx, Git, Bash, Nätverksanalys, UI & UX-design.</p>
+            <section class="mb-12">
+                <h2 class="text-[0.85rem] uppercase tracking-[0.1em] text-[#86868b] font-semibold mb-4">Färdigheter</h2>
+                <p class="text-lg font-light text-[#333333]">Linux Administration, Nginx, Git, Bash, Nätverksanalys, UI & UX-design.</p>
             </section>
 
-            <section id="projekt">
-                <h2>Projekt</h2>
-                <div class="project-item">
-                    <span class="project-title">Portfolio Server</span>
-                    <p style="font-size: 0.95rem; color: #666;">
-                        En Rocky Linux-server uppsatt från grunden med automatiserad deployment via GitHub.
+            <section class="mb-12">
+                <h2 class="text-[0.85rem] uppercase tracking-[0.1em] text-[#86868b] font-semibold mb-4">Projekt</h2>
+                <div class="group">
+                    <span class="font-semibold block">Portfolio</span>
+                    <p class="text-[0.95rem] text-[#666] font-light">
+                        En Rocky Linux-server uppsatt från grunden med Hetzner VPS och automatiserad deployment (CI/CD) via Git.
+                    </p></br>
+
+                    <span class="font-semibold block">UI-prototyp för Mixed Reality produkt</span>
+                    <p class="text-[0.95rem] text-[#666] font-light">
+                        Utvecklade ett interaktivt 3D-UI i Blender, med fokus på användarvänlighet och säkerhet enligt målgrupp.
+                    </p></br>
+
+                    <span class="font-semibold block">UI-prototyp för mobil bank-app</span>
+                    <p class="text-[0.95rem] text-[#666] font-light">
+                        Utvecklade en UI-prototyp i Figma för en mobil bank-app enligt kundens kravspecifikation.
+                    </p></br>
+
+                    <span class="font-semibold block">Lösning av FRA:s CTF-utmaning Exfiltratören</span>
+                    <p class="text-[0.95rem] text-[#666] font-light">
+                        Beskrivning.
                     </p>
                 </div>
             </section>
         </main>
+
     </div>
 
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

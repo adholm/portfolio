@@ -76,9 +76,9 @@ const ProjectsPage = () => {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
-            {/* Status Ribbon */}
-            <div className={`absolute top-3 left-3 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider z-20 backdrop-blur-md shadow-sm
-                ${project.status === 'ongoing' ? 'bg-sky-500/80 text-white' : 'bg-teal-500/80 text-white'}`}>
+            {/* Status Ribbon - Nu med ren genomskinlighet utan blur */}
+            <div className={`absolute top-2 left-2 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider z-20
+                ${project.status === 'ongoing' ? 'bg-sky-600/70 text-white' : 'bg-teal-600/70 text-white'}`}>
                 {project.status === 'ongoing' ? 'Ongoing' : 'Completed'}
                 </div>
                 </div>

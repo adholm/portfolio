@@ -20,10 +20,10 @@ const Contact = () => {
                     {/* VÄNSTER SIDA: Text och Ikoner */}
                     <div>
                         {/* drop-shadow-lg gör texten läsbar mot ljusa/färgstarka partier i bilden */}
-                        <h1 className="text-5xl font-bold mb-6 tracking-tighter text-white drop-shadow-lg">
+                        <h1 className="text-5xl font-bold mb-3 tracking-tighter text-white drop-shadow-lg">
                             Let's connect.
                         </h1>
-                        <p className="text-gray-300 leading-relaxed mb-10 text-lg max-w-md drop-shadow-md font-medium">
+                        <p className="text-gray-300 leading-relaxed mb-5 text-lg max-w-md drop-shadow-md font-medium">
                             Whether you have a system to secure, an interface to design, or simply want to say hello — let's start a conversation.
                         </p>
                         

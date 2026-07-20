@@ -17,7 +17,7 @@ const Hero = () => {
                     Adam Holm
                 </h1>
                 <p className="mt-1 text-lg font-semibold text-gray-300 drop-shadow-md">
-                    Tech Specialist with a passion for Linux, code, UI/UX & Cybersecurity. Based in Stockholm.
+                    Tech Specialist with a passion for Linux, code, UI/UX & Cybersecurity. Based in Stockholm 🇸🇪
                 </p>
             </div>
 

@@ -1,0 +1,35 @@
+name: Deploy Website to Hetzner
+
+on:
+  push:
+    branches:
+      - main # Skriptet körs bara när du pushar till main-branchen
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hämta källkod från GitHub
+        uses: actions/checkout@v4
+
+      - name: Installera Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Installera beroenden och bygg projektet
+        run: |
+          npm ci
+          npm run build
+
+      - name: Skicka dist-filer till Hetzner VPS
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.VPS_IP }}
+          REMOTE_USER: ${{ secrets.VPS_USER }}
+          SOURCE: "dist/"
+          TARGET: "/var/www/adamh.se/html/"
+          ARGS: "-avz --delete"

@@ -3,7 +3,7 @@ name: Deploy Website to Hetzner
 on:
   push:
     branches:
-      - main # Skriptet körs bara när du pushar till main-branchen
+      - main
 
 jobs:
   deploy:
@@ -28,7 +28,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v5.1.0
         with:
           SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
-	  PASSPHRASE: ${{ secrets.VPS_SSH_PASSPHRASE }}
+          PASSPHRASE: ${{ secrets.VPS_SSH_PASSPHRASE }}
           REMOTE_HOST: ${{ secrets.VPS_IP }}
           REMOTE_USER: ${{ secrets.VPS_USER }}
           SOURCE: "dist/"

@@ -1,0 +1,692 @@
+
+=== FIL: src/components/Footer.jsx ===
+const Footer = () => {
+    return (
+            <footer className="text-center py-3 mt-auto">
+        <p className="text-xs text-gray-500">© {new Date().getFullYear()} Adam Holm. All rights reserved.</p>
+    </footer>
+    );
+};
+
+export default Footer
+=== FIL: src/components/Hero.jsx ===
+const Hero = () => {
+    return (
+        /* Den yttre behållaren tar hela bredden och har linjen i botten */
+        <section className="min-h-[50vh] flex items-center justify-center w-full relative bg-cover bg-center"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1651497111372-9107c1a5d9a0')" }}>
+            {/* Current bg: https://images.unsplash.com/photo-1651497111372-9107c1a5d9a0 */}
+            {/* Contender bg: https://images.unsplash.com/photo-1695376425475-1b6b561f8e4e */}
+            {/* Contender bg2: https://images.unsplash.com/photo-1774308667027-3ce5c579a518 */}
+
+
+            {/* Mörka bilden */}
+            {/* <div className="absolute inset-0 bg-slate-950/60"></div> */}
+
+            {/* Den inre behållaren centrerar och begränsar textens bredd */}
+            <div className="relative z-10 max-w-6xl mx-auto py-40 text-center">
+                <h1 className="uppercase text-white text-6xl font-bold tracking-tighter drop-shadow-lg">
+                    Adam Holm
+                </h1>
+                <p className="mt-1 text-lg font-semibold text-gray-300 drop-shadow-md">
+                    Tech Specialist with a passion for Linux, code, UI/UX & Cybersecurity. Based in Stockholm.
+                </p>
+            </div>
+
+        </section>
+    );
+};
+
+export default Hero;  
+
+=== FIL: src/components/Navbar.jsx ===
+import { Link } from 'react-router-dom';
+
+const Navbar = () => {
+    return (
+        <nav className="flex items-center px-8 py-3 border-b border-white/10">
+            
+            {/* Vänster sida: Logga */}
+            <div className="font-bold text-xl tracking-tighter flex-1">
+                ADAMH
+            </div>
+
+            {/* Mitten: Centrerade navigeringslänkar med hover-effekter */}
+            <div className="flex gap-6 text-sm font-medium items-center">
+                <Link to="/" className="hover:text-teal-400 transition-colors">Home</Link>
+                <Link to="/about" className="hover:text-teal-400 transition-colors">About</Link>
+                <Link to="/projects" className="hover:text-teal-400 transition-colors">Projects</Link>
+                <Link to="/contact" className="border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg hover:bg-teal-500/10 transition-all">
+                    Contact
+                </Link>
+            </div>
+
+            {/* Höger sida: "Spöket" som tvingar mitten att bli sann mittpunkt */}
+            <div className="flex-1"></div>
+
+        </nav>
+    );
+};
+
+export default Navbar;
+=== FIL: src/components/Projects.jsx ===
+const Projects = () => {
+    // Lista med projektobjekt – gör det enkelt att lägga till/ta bort projekt
+    const projects = [
+        { 
+            id: "portfolio", 
+            name: "Fullstack Portfolio",
+            status: "ongoing",
+            image: "https://images.unsplash.com/photo-1592609931095-54a2168ae893?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            desc: "Fullstack development of a VPS-hosted portfolio website using React & Tailwind."
+        },
+        { 
+            id: "ctf-fra", 
+            name: "CTF Challenge",
+            status: "completed",
+            image: "https://images.unsplash.com/photo-1645262748907-6827d43215d4",
+            desc: "Solved FRA:s cryptography challenge using Wireshark, Stegsolve & Bash/Python." 
+        },
+        { 
+            id: "bank-ui", 
+            name: "Mobile Bank App UI",
+            status: "completed",
+            image: "https://images.unsplash.com/photo-1761998066489-4f32b9a4dff8?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            desc: "Developed a scalable UI prototype in Figma for a mobile bank application." 
+        },
+        { 
+            id: "mr-3dui", 
+            name: "Mixed Reality 3D UI",
+            status: "completed",
+            image: "https://images.unsplash.com/photo-1707167144646-cea7d2027ef7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            desc: "Developed a user-centered 3D UI prototype in Blender for a Mixed Reality product." 
+        }
+    ];
+
+    return (
+        /* pt-10 minskar avståndet uppåt till Hero, pb-20 behåller luft nedåt */
+        <section className="max-w-6xl mx-auto pt-5 px-8 border-t border-white/10">
+            
+            {/* text-2xl gör rubriken mindre, mb-8 minskar avståndet till korten */}
+            <h2 className="text-sm uppercase tracking-wider font-semibold text-center text-gray-400 mb-5">Recent projects</h2>
+
+            {/* lg:grid-cols-4 tvingar fram 4 kolumner på stora skärmar */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+                {projects.map((project) => (
+                    <a 
+                        href={`/projects#${project.id}`} 
+                        key={project.id}
+                        /* group-klass tillåter oss att styla barnen (som bilden) vid hover */
+                        className="group bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-900/50 hover:border-teal-500/20 transition-all duration-700"
+                    >
+                        {/* Bilder för projektkorten med fast proportion (aspect-video) */}
+                        <div className="aspect-video w-full overflow-hidden relative">
+                            <img 
+                                src={project.image} 
+                                alt={project.name}
+                                /* scale skapar zoom-effekt vid hover */
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            {/* Ribbon som visar projektets status */}
+                            <div className={`absolute top-2 left-2 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider z-20 
+                            ${project.status === 'ongoing' ? 'bg-sky-600/70 text-white' : 'bg-teal-600/70 text-white'}`}>
+                            {project.status === 'ongoing' ? 'Ongoing' : 'Completed'}
+                            </div>
+
+                        </div>
+                        
+                        {/* Textinnehåll med padding */}
+                        <div className="p-5">
+                            <h3 className="text-base font-semibold text-white group-hover:text-teal-400 transition-colors">
+                                {project.name}
+                            </h3>
+                            <p className="text-gray-400 text-sm leading-relaxed">
+                                {project.desc}
+                            </p>
+                        </div>
+                    </a>
+                ))}
+            </div>
+        </section>
+    );
+};
+
+export default Projects;
+=== FIL: src/components/Split.jsx ===
+const Split = () => {
+    const expertise = ["Linux", "React", "Cybersecurity", "Wireshark", "Python", "Windows", "Microsoft 365", "UI", "UX", "IxD", "Blender", "Figma", "Steganalysis"];
+    const projects = [
+  { id: "portfolio", name: "Developed a VPS-hosted Portfolio with React & Tailwind"},
+  { id: "ctf-fra", name: "Solved CTF Cryptography Challenge"},
+  { id: "bank-ui", name: "Prototyped UI for Mobile Bank App"},
+  { id: "mr-ui", name: "Prototyped 3D UI for Mixed Reality Product"}
+];
+    return (
+        <section className="max-w-6xl mx-auto py-5 grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            {/* Vänster box: Recent projects */}
+            <div>
+                <h2 className="text-xl font-bold mb-3">Recent projects</h2>
+                    <ul className="list-disc list-inside space-y-1 text-slate-400 text-base">
+                        {projects.map((project) => (
+                        <li key={project.id}>
+                            <a href={`/projects#${project.id}`} className="hover:text-white transition-colors text-gray-200">
+                            {project.name}
+                            </a>
+                        </li>
+))}
+                    </ul>
+            </div>
+
+            {/* Höger box: Expertise */}
+            <div>
+                <h2 className="text-xl font-bold mb-3">Expertise</h2>
+                <div className="flex flex-wrap gap-2">
+                    {expertise.map((expertise) => (
+  <span key={expertise} className="bg-gray-800 px-3 py-1 rounded-full text-xs font-medium">
+    {expertise}
+  </span>
+))}
+                </div>
+
+            </div> 
+
+        </section>
+    );
+};
+
+export default Split
+=== FIL: src/pages/Contact.jsx ===
+const Contact = () => {
+    return (
+        /* ÄNDRING HÄR: "flex-1" gör att sektionen fyller exakt det utrymme som finns kvar, utan matematikkrångel. */
+        <section className="relative flex-1 flex items-center py-20 overflow-hidden">
+            
+            {/* 1. Samma bakgrundsbild som på Home. Uppskalad 5% för att undvika fula kanter vid blur */}
+            <div 
+                className="absolute inset-0 bg-cover bg-center scale-105 z-0"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1651497111372-9107c1a5d9a0')" }}
+            ></div>
+
+            {/* 2. Ren oskärpa (blur). INGEN svart färg, bara glas-effekt */}
+            <div className="absolute inset-0 backdrop-blur-xl z-0"></div>
+
+            {/* Innehållet */}
+            <div className="relative z-10 w-full max-w-6xl mx-auto px-8">
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    
+                    {/* VÄNSTER SIDA: Text och Ikoner */}
+                    <div>
+                        {/* drop-shadow-lg gör texten läsbar mot ljusa/färgstarka partier i bilden */}
+                        <h1 className="text-5xl font-bold mb-6 tracking-tighter text-white drop-shadow-lg">
+                            Let's connect.
+                        </h1>
+                        <p className="text-gray-300 leading-relaxed mb-10 text-lg max-w-md drop-shadow-md font-medium">
+                            Whether you have a system to secure, an interface to design, or simply want to say hello — let's start a conversation.
+                        </p>
+                        
+                        {/* Sociala Länkar */}
+                        <div className="flex gap-8 drop-shadow-md">
+                            
+                            {/* Email */}
+                            <a href="mailto:holmadam@outlook.com" className="text-gray-300 hover:text-teal-400 transition-colors duration-300" aria-label="Email">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                            </a>
+
+                            {/* LinkedIn */}
+                            <a href="https://linkedin.com/in/adholm" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-teal-400 transition-colors duration-300" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect width="4" height="12" x="2" y="9"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </a>
+
+                            {/* GitHub */}
+                            <a href="https://github.com/adholm" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-teal-400 transition-colors duration-300" aria-label="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                                    <path d="M9 18c-4.51 2-5-2-7-2"/>
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    {/* HÖGER SIDA: Kontaktformulär. */}
+                    <div className="bg-black/20 backdrop-blur-2xl p-8 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
+                        <form className="space-y-6">
+                            
+                            {/* Namn-fält */}
+                            <div>
+                                <label htmlFor="name" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">
+                                    Name
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="name"
+                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all"
+                                    placeholder="Your Name"
+                                />
+                            </div>
+
+                            {/* Email-fält */}
+                            <div>
+                                <label htmlFor="email" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">
+                                    Email
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email"
+                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all"
+                                    placeholder="you@example.com"
+                                />
+                            </div>
+
+                            {/* Meddelande-fält */}
+                            <div>
+                                <label htmlFor="message" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">
+                                    Message
+                                </label>
+                                <textarea 
+                                    id="message"
+                                    rows="5"
+                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all resize-none"
+                                    placeholder="How can we work together?"
+                                ></textarea>
+                            </div>
+
+                            {/* Skicka-knapp */}
+                            <button 
+                                type="button" 
+                                className="w-full bg-teal-500 text-slate-900 font-bold py-4 rounded-lg hover:bg-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300 mt-4"
+                            >
+                                Send Message
+                            </button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Contact;
+=== FIL: src/pages/ProjectsPage.jsx ===
+const ProjectsPage = () => {
+    const projects = [
+        { 
+            id: "portfolio", 
+            name: "Fullstack Portfolio",
+            status: "ongoing",
+            image: "https://images.unsplash.com/photo-1592609931095-54a2168ae893?q=80&w=1170&auto=format&fit=crop",
+            desc: "Fullstack development of a VPS-hosted portfolio website focusing on performance, security, and a minimalist UI.",
+            tags: ["React", "Tailwind CSS", "Linux VPS"]
+        },
+        { 
+            id: "ctf-fra", 
+            name: "CTF Challenge",
+            status: "completed",
+            image: "https://images.unsplash.com/photo-1645262748907-6827d43215d4",
+            desc: "Solved FRA's cryptography challenge utilizing network analysis and steganography tools.",
+            tags: ["Wireshark", "Python", "Bash"]
+        },
+        { 
+            id: "bank-ui", 
+            name: "Mobile Bank App UI",
+            status: "completed",
+            image: "https://images.unsplash.com/photo-1761998066489-4f32b9a4dff8?q=80&w=1032&auto=format&fit=crop",
+            desc: "Developed a scalable, user-centric UI prototype for a modern mobile banking application.",
+            tags: ["Figma", "UI/UX", "Prototyping"]
+        },
+        { 
+            id: "mr-3dui", 
+            name: "Mixed Reality 3D UI",
+            status: "completed",
+            image: "https://images.unsplash.com/photo-1707167144646-cea7d2027ef7?q=80&w=1170&auto=format&fit=crop",
+            desc: "Designed and prototyped a spatial 3D user interface for an upcoming Mixed Reality headset product.",
+            tags: ["Blender", "Spatial Design", "3D UI"]
+        }
+    ];
+
+    return (
+        <section className="relative flex-1 w-full flex flex-col justify-center py-8 overflow-hidden">
+            
+            {/* Bakgrundsbild */}
+            <div 
+                className="absolute inset-0 bg-cover bg-center scale-105 z-0"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1651497111372-9107c1a5d9a0')" }}
+            ></div>
+
+            {/* Ren oskärpa (blur) */}
+            <div className="absolute inset-0 backdrop-blur-2xl z-0"></div>
+
+            {/* Innehålls-container. Extra padding på lg-skärmar (lg:px-16) för att krympa gridden proportionerligt och spara höjd */}
+            <div className="relative z-10 w-full max-w-5xl mx-auto px-6 lg:px-16 flex flex-col items-center">
+                
+                {/* SUBTIL HEADER: Mycket tajtare marginaler och mindre text än tidigare */}
+                <div className="text-center mb-8 flex flex-col items-center">
+                    <h1 className="text-3xl lg:text-4xl font-bold mb-3 tracking-tighter text-white drop-shadow-lg">
+                        Projects
+                    </h1>
+                    <p className="text-gray-400 text-sm max-w-lg leading-relaxed drop-shadow-md">
+                        An in-depth look at my latest work across cybersecurity, front- & backend development, and spatial UI design.
+                    </p>
+                </div>
+
+                {/* PROJEKT-GALLERI: 2x2 Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
+                    {projects.map((project) => (
+                        <a 
+                            href={`#${project.id}`} 
+                            key={project.id}
+                            className="group flex flex-col bg-black/20 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/10 hover:border-teal-500/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)]"
+                        >
+                            {/* Bildbehållare - 16:9 aspect ratio */}
+                            <div className="aspect-video w-full overflow-hidden relative border-b border-white/10">
+                                <img 
+                                    src={project.image} 
+                                    alt={project.name}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                />
+                                
+                                {/* Status Ribbon */}
+                                <div className={`absolute top-3 left-3 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider z-20 backdrop-blur-md shadow-sm
+                                ${project.status === 'ongoing' ? 'bg-sky-500/80 text-white' : 'bg-teal-500/80 text-white'}`}>
+                                    {project.status === 'ongoing' ? 'Ongoing' : 'Completed'}
+                                </div>
+                            </div>
+                            
+                            {/* Text och Taggar */}
+                            <div className="p-5 flex flex-col flex-1">
+                                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-teal-400 transition-colors">
+                                    {project.name}
+                                </h3>
+                                <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+                                    {project.desc}
+                                </p>
+                                
+                                {/* Tech Tags */}
+                                <div className="flex flex-wrap gap-1.5 mt-auto">
+                                    {project.tags.map((tag, index) => (
+                                        <span 
+                                            key={index} 
+                                            className="text-[9px] uppercase tracking-wider font-semibold text-teal-300 bg-teal-500/10 border border-teal-500/20 px-2 py-1 rounded-md"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+
+            </div>
+        </section>
+    );
+};
+
+export default ProjectsPage;
+
+=== FIL: src/App.css ===
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+=== FIL: src/App.jsx ===
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Projects from "./components/Projects";
+import Footer from "./components/Footer";
+import ProjectsPage from "./pages/ProjectsPage";
+import Contact from "./pages/Contact"; // Kontrollera att denna fil finns i src/pages/Contact.jsx
+
+function App() {
+  return (
+    <Router>
+      <div className="flex flex-col min-h-screen bg-black text-white">
+        
+        <Navbar />
+
+        <main className="flex-grow flex flex-col">
+          <Routes>
+            {/* HEM-SIDAN: Kombinerar Hero och din Recent Projects-sektion */}
+            <Route path="/" element={
+              <>
+                <Hero />
+                <Projects />
+              </>
+            } />
+
+            {/* SEPARAT PROJEKT-SIDA */}
+            <Route path="/projects" element={<ProjectsPage />} />
+            
+            {/* KONTAKT-SIDAN */}
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+
+        <Footer />
+
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+=== FIL: src/main.jsx ===
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+=== FIL: src/index.css ===
+@import "tailwindcss";
+
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    /* Font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}

@@ -1,6 +1,6 @@
 const Contact = () => {
     return (
-        /* ÄNDRING HÄR: "flex-1" gör att sektionen fyller exakt det utrymme som finns kvar, utan matematikkrångel. */
+        /* ÄNDRING HÄR: "flex-1" gör att sektionen fyller exakt det utrymme som finns kvar */
         <section className="relative flex-1 flex items-center py-20 overflow-hidden">
             
             {/* 1. Samma bakgrundsbild som på Home. Uppskalad 5% för att undvika fula kanter vid blur */}
@@ -10,7 +10,7 @@ const Contact = () => {
             ></div>
 
             {/* 2. Ren oskärpa (blur). INGEN svart färg, bara glas-effekt */}
-            <div className="absolute inset-0 backdrop-blur-xl z-0"></div>
+            <div className="absolute inset-0 backdrop-blur-2xl z-0"></div>
 
             {/* Innehållet */}
             <div className="relative z-10 w-full max-w-6xl mx-auto px-8">

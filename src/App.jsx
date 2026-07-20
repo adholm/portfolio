@@ -5,6 +5,7 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import ProjectsPage from "./pages/ProjectsPage";
 import Contact from "./pages/Contact"; // Kontrollera att denna fil finns i src/pages/Contact.jsx
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
             
             {/* KONTAKT-SIDAN */}
             <Route path="/contact" element={<Contact />} />
+            {/* ABOUT-SIDA */}
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>
 

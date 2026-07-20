@@ -1,6 +1,7 @@
-const Contact = () => {
+const AboutPage = () => {
     return (
-        <section className="relative flex-1 flex items-center py-20 overflow-hidden">
+        /* Sektionens grundlayout */
+        <section className="relative flex-1 w-full flex flex-col pt-8 pb-4 overflow-hidden">
 
         {/* Bakgrundsbild */}
         <div
@@ -9,24 +10,25 @@ const Contact = () => {
         ></div>
 
         {/* Ren oskärpa (blur) */}
-        <div className="absolute inset-0 backdrop-blur-xl z-0"></div>
+        <div className="absolute inset-0 backdrop-blur-2xl z-0"></div>
 
-        {/* Innehållet */}
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-8">
+        {/* Innehålls-container */}
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex-1 flex flex-col md:flex-row items-center justify-center gap-10 lg:gap-16 my-auto pb-16 md:pb-24">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* VÄNSTER SIDA: Profilbild + Uppdaterade Sociala medier-knappar */}
+        <div className="flex flex-col items-center gap-5 flex-shrink-0 animate-fade-in">
 
-        {/* VÄNSTER SIDA: Text och de nya uppdaterade knapparna */}
-        <div>
-        <h1 className="text-5xl font-bold mb-3 tracking-tighter text-white drop-shadow-lg">
-        Let's connect!
-        </h1>
-        <p className="text-gray-300 leading-relaxed mb-5 text-lg max-w-md drop-shadow-md font-medium">
-        Whether you have a system to secure, an interface to design, or simply want to say hello (or hej) — let's start a conversation.
-        </p>
+        {/* Cirkel-ram för profilbild */}
+        <div className="w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border border-white/10 bg-black/30 backdrop-blur-md shadow-2xl">
+        <img
+        src="/images/pfp.jpeg"
+        alt="Adam Holm"
+        className="w-full h-full object-cover"
+        />
+        </div>
 
-        {/* Sociala Länkar - Nu stylade som moderna teal-knappar som matchar About */}
-        <div className="flex gap-4 drop-shadow-md">
+        {/* Sociala medier-knappar (Nu i form av transparenta teal-knappar) */}
+        <div className="flex gap-4 drop-shadow-md mt-1">
 
         {/* Email */}
         <a
@@ -72,31 +74,24 @@ const Contact = () => {
         </div>
         </div>
 
-        {/* HÖGER SIDA: Kontaktformulär */}
-        <div className="bg-black/20 backdrop-blur-2xl p-8 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
-        <form className="space-y-6">
-        <div>
-        <label htmlFor="name" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">Name</label>
-        <input type="text" id="name" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all" placeholder="Your Name" />
-        </div>
-        <div>
-        <label htmlFor="email" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">Email</label>
-        <input type="email" id="email" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all" placeholder="you@example.com" />
-        </div>
-        <div>
-        <label htmlFor="message" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">Message</label>
-        <textarea id="message" rows="5" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all resize-none" placeholder="How can we work together?"></textarea>
-        </div>
-        <button type="button" className="w-full bg-teal-500 text-slate-900 font-bold py-4 rounded-lg hover:bg-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300 mt-4">
-        Send Message
-        </button>
-        </form>
+        {/* HÖGER SIDA: Textinnehåll med din exakta bio och lysande understrykning */}
+        <div className="text-center md:text-left max-w-xl">
+        <h1 className="text-3xl lg:text-4xl font-bold mb-4 tracking-tighter text-white drop-shadow-lg">
+        Hi, I'm Adam.
+        </h1>
+
+        <p className="text-gray-300 text-sm sm:text-base leading-relaxed drop-shadow-md font-medium">
+        I am a tech enthusiast and fresh graduate in Stockholm with a particular passion for Linux, code, automation, UI/UX design, and cybersecurity.
+        <br /><br />
+        At home I run my favorite Linux-distribution openSUSE Tumbleweed. My journey with Linux started when I was a teenager, and I have always enjoyed challenging myself with new knowledge, problem-solving and studying the underlying structure and logic of systems.
+        <br /><br />
+        At the moment I'm focused on improving this website and <span className="text-white font-semibold underline decoration-teal-400 decoration-2 underline-offset-4 drop-shadow-[0_0_6px_rgba(45,212,191,0.9)]">searching for my first challenge in tech</span> — but if I'm not doing that, I'm probably reading a book or swimming!
+        </p>
         </div>
 
-        </div>
         </div>
         </section>
     );
 };
 
-export default Contact;
+export default AboutPage;

@@ -9,17 +9,14 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="flex items-center px-4 md:px-8 py-3 border-b border-white/10 relative">
+        <nav className="flex items-center justify-between px-4 md:px-8 py-3 border-b border-white/10 relative">
             
-            {/* Logo - always visible */}
+            {/* Logo - always visible on the left */}
             <div className="font-bold text-xl tracking-tighter">
                 <Link to="/" className="hover:text-teal-400 transition-colors">ADAMH</Link>
             </div>
 
-            {/* Spacer to push desktop links to center */}
-            <div className="flex-1 hidden md:block"></div>
-
-            {/* Desktop Navigation Links - hidden on mobile, centered */}
+            {/* Desktop Navigation Links - centered in the navbar */}
             <div className="hidden md:flex gap-6 text-sm font-medium items-center">
                 <Link to="/" className="hover:text-teal-400 transition-colors">Home</Link>
                 <Link to="/about" className="hover:text-teal-400 transition-colors">About</Link>
@@ -29,13 +26,10 @@ const Navbar = () => {
                 </Link>
             </div>
 
-            {/* Spacer to balance the logo on the left */}
-            <div className="flex-1 hidden md:block"></div>
-
             {/* Hamburger Menu Button - visible only on mobile */}
             <button
                 onClick={toggleMenu}
-                className="md:hidden ml-auto p-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500/50"
+                className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500/50"
                 aria-label="Toggle menu"
                 aria-expanded={isOpen}
             >
@@ -68,35 +62,36 @@ const Navbar = () => {
                 </svg>
             </button>
 
-            {/* Mobile Dropdown Menu - slides down when open */}
+            {/* Mobile Dropdown Menu - full width, high z-index to ensure visibility */}
             <div
-                className={`md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-xl border-b border-white/10 transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
+                className={`md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 z-50 transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
+                style={{ zIndex: 1000 }}
             >
-                <div className="flex flex-col items-center py-4 space-y-3">
+                <div className="flex flex-col items-center py-6 space-y-4">
                     <Link
                         to="/"
-                        className="text-sm font-medium hover:text-teal-400 transition-colors px-4 py-2"
+                        className="text-sm font-medium hover:text-teal-400 transition-colors px-4 py-2 w-full text-center"
                         onClick={() => setIsOpen(false)}
                     >
                         Home
                     </Link>
                     <Link
                         to="/about"
-                        className="text-sm font-medium hover:text-teal-400 transition-colors px-4 py-2"
+                        className="text-sm font-medium hover:text-teal-400 transition-colors px-4 py-2 w-full text-center"
                         onClick={() => setIsOpen(false)}
                     >
                         About
                     </Link>
                     <Link
                         to="/projects"
-                        className="text-sm font-medium hover:text-teal-400 transition-colors px-4 py-2"
+                        className="text-sm font-medium hover:text-teal-400 transition-colors px-4 py-2 w-full text-center"
                         onClick={() => setIsOpen(false)}
                     >
                         Projects
                     </Link>
                     <Link
                         to="/contact"
-                        className="border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg hover:bg-teal-500/10 transition-all mt-2"
+                        className="border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg hover:bg-teal-500/10 transition-all mt-2 w-full text-center"
                         onClick={() => setIsOpen(false)}
                     >
                         Contact

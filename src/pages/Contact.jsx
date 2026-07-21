@@ -1,6 +1,6 @@
 const Contact = () => {
     return (
-        <section className="relative flex-1 flex items-center py-20 overflow-hidden">
+        <section className="relative flex-1 flex items-center py-16 md:py-20 overflow-hidden">
 
         {/* Bakgrundsbild */}
         <div
@@ -12,16 +12,16 @@ const Contact = () => {
         <div className="absolute inset-0 backdrop-blur-xl z-0"></div>
 
         {/* Innehållet */}
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-8">
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-8">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
         {/* VÄNSTER SIDA: Text och de nya uppdaterade knapparna */}
         <div>
-        <h1 className="text-5xl font-bold mb-3 tracking-tighter text-white drop-shadow-lg">
+        <h1 className="text-4xl md:text-5xl font-bold mb-3 tracking-tighter text-white drop-shadow-lg">
         Let's connect!
         </h1>
-        <p className="text-gray-300 leading-relaxed mb-5 text-lg max-w-md drop-shadow-md font-medium">
+        <p className="text-gray-300 leading-relaxed mb-8 text-base md:text-lg max-w-md drop-shadow-md font-medium">
         Whether you have a system to secure, an interface to design, or simply want to say hello (or hej) — let's start a conversation.
         </p>
 
@@ -73,7 +73,7 @@ const Contact = () => {
         </div>
 
         {/* HÖGER SIDA: Kontaktformulär */}
-        <div className="bg-black/20 backdrop-blur-2xl p-8 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
+        <div className="bg-black/20 backdrop-blur-2xl p-6 sm:p-8 md:p-10 rounded-2xl border border-white/10 shadow-2xl w-full">
         <form className="space-y-6">
         <div>
         <label htmlFor="name" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">Name</label>

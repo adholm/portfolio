@@ -12,11 +12,11 @@ const Hero = () => {
             {/* <div className="absolute inset-0 bg-slate-950/60"></div> */}
 
             {/* Den inre behållaren centrerar och begränsar textens bredd */}
-            <div className="relative z-10 max-w-6xl mx-auto py-40 text-center">
-                <h1 className="uppercase text-white text-6xl font-bold tracking-tighter drop-shadow-lg">
+            <div className="relative z-10 max-w-6xl mx-auto py-20 md:py-40 text-center px-4">
+                <h1 className="uppercase text-white text-4xl md:text-6xl font-bold tracking-tighter drop-shadow-lg">
                     Adam Holm
                 </h1>
-                <p className="mt-1 text-lg font-semibold text-gray-300 drop-shadow-md">
+                <p className="mt-4 md:mt-1 text-base md:text-lg font-semibold text-gray-300 drop-shadow-md">
                     Tech Specialist with a passion for Linux, code, UI/UX & Cybersecurity. Based in Stockholm 🇸🇪
                 </p>
             </div>

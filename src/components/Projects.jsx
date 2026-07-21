@@ -33,13 +33,13 @@ const Projects = () => {
 
     return (
         /* pt-10 minskar avståndet uppåt till Hero, pb-20 behåller luft nedåt */
-        <section className="max-w-6xl mx-auto pt-5 px-8 border-t border-white/10">
+        <section className="max-w-6xl mx-auto pt-5 px-4 sm:px-8 border-t border-white/10">
             
             {/* text-2xl gör rubriken mindre, mb-8 minskar avståndet till korten */}
             <h2 className="text-sm uppercase tracking-wider font-semibold text-center text-gray-400 mb-5">Recent projects</h2>
 
-            {/* lg:grid-cols-4 tvingar fram 4 kolumner på stora skärmar */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+            {/* Grid: 1 column on mobile, 2 on small screens, 4 on large screens */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 justify-center">
                 {projects.map((project) => (
                     <a 
                         href={`/projects#${project.id}`} 
@@ -64,7 +64,7 @@ const Projects = () => {
                         </div>
                         
                         {/* Textinnehåll med padding */}
-                        <div className="p-5">
+                        <div className="p-4 sm:p-5">
                             <h3 className="text-base font-semibold text-white group-hover:text-teal-400 transition-colors">
                                 {project.name}
                             </h3>

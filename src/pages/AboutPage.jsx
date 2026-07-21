@@ -13,13 +13,13 @@ const AboutPage = () => {
         <div className="absolute inset-0 backdrop-blur-2xl z-0"></div>
 
         {/* Innehålls-container */}
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex-1 flex flex-col md:flex-row items-center justify-center gap-10 lg:gap-16 my-auto pb-16 md:pb-24">
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 flex-1 flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-16 my-auto pb-16 md:pb-24">
 
         {/* VÄNSTER SIDA: Profilbild + Uppdaterade Sociala medier-knappar */}
         <div className="flex flex-col items-center gap-5 flex-shrink-0 animate-fade-in">
 
         {/* Cirkel-ram för profilbild */}
-        <div className="w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border border-white/10 bg-black/30 backdrop-blur-md shadow-2xl">
+        <div className="w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border border-white/10 bg-black/30 backdrop-blur-md shadow-2xl">
         <img
         src="/images/pfp.jpeg"
         alt="Adam Holm"

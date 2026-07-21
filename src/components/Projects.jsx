@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Projects = () => {
     // Lista med projektobjekt – gör det enkelt att lägga till/ta bort projekt
     const projects = [
@@ -33,13 +35,20 @@ const Projects = () => {
 
     return (
         /* pt-10 minskar avståndet uppåt till Hero, pb-20 behåller luft nedåt */
-        <section className="max-w-6xl mx-auto pt-5 px-4 sm:px-8 border-t border-white/10">
+        <section className="max-w-6xl mx-auto pt-5 px-4 sm:px-8 border-t border-white/10 relative overflow-hidden">
             
-            {/* text-2xl gör rubriken mindre, mb-8 minskar avståndet till korten */}
-            <h2 className="text-sm uppercase tracking-wider font-semibold text-center text-gray-400 mb-5">Recent projects</h2>
+            {/* Animated gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-900/20 to-transparent animate-pulse-slow -z-10"></div>
+
+            {/* Clickable "Recent projects" header */}
+            <div className="text-sm uppercase tracking-wider font-semibold text-center text-gray-400 mb-5 relative z-10">
+                <Link to="/projects" className="hover:text-teal-400 hover:underline transition-colors">
+                    Recent projects
+                </Link>
+            </div>
 
             {/* Grid: 1 column on mobile, 2 on small screens, 4 on large screens */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 justify-center relative z-10">
                 {projects.map((project) => (
                     <a 
                         href={`/projects#${project.id}`} 
@@ -58,7 +67,7 @@ const Projects = () => {
                             {/* Ribbon som visar projektets status */}
                             <div className={`absolute top-2 left-2 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider z-20 
                             ${project.status === 'ongoing' ? 'bg-sky-600/70 text-white' : 'bg-teal-600/70 text-white'}`}>
-                            {project.status === 'ongoing' ? 'Ongoing' : 'Completed'}
+                                {project.status === 'ongoing' ? 'Ongoing' : 'Completed'}
                             </div>
 
                         </div>

@@ -9,7 +9,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="flex items-center justify-center px-4 md:px-8 py-3 border-b border-white/10 relative">
+        <nav className="flex items-center justify-center px-4 md:px-8 py-4 md:py-3 border-b border-white/10 relative">
             
             {/* Logo - absolutely positioned on the left */}
             <div className="absolute left-4 md:left-8 font-bold text-xl tracking-tighter">
@@ -89,13 +89,15 @@ const Navbar = () => {
                     >
                         Projects
                     </Link>
-                    <Link
-                        to="/contact"
-                        className="border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg hover:bg-teal-500/10 transition-all mt-2 w-full text-center"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Contact
-                    </Link>
+                    <div className="px-4 py-2">
+                        <Link
+                            to="/contact"
+                            className="border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg hover:bg-teal-500/10 transition-all inline-block"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Contact
+                        </Link>
+                    </div>
                 </div>
             </div>
 

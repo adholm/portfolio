@@ -53,7 +53,7 @@ const ProjectsPage = () => {
         {/* HEADER: Helt vanlig flödesplacering, men med mindre bottenmarginal (mb-2) */}
         <div className="text-center mb-2 flex flex-col items-center">
         <h1 className="text-3xl lg:text-4xl font-bold mb-1 tracking-tighter text-white drop-shadow-lg">
-        Recent projects
+        Latest projects
         </h1>
         <p className="text-gray-300 text-sm max-w-xl leading-relaxed drop-shadow-md">
         An in-depth look at my latest work across cybersecurity, front- & backend development, and UI/UX design.

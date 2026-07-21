@@ -24,7 +24,7 @@ function App() {
               </>
             } />
 
-            {/* SEPARAT PROJEKT-SIDA */}
+            {/* PROJEKT-SIDA */}
             <Route path="/projects" element={<ProjectsPage />} />
             
             {/* KONTAKT-SIDAN */}

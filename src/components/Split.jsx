@@ -8,7 +8,7 @@ const Split = () => {
 ];
     return (
         <section className="max-w-6xl mx-auto py-5 grid grid-cols-1 md:grid-cols-2 gap-12">
-            
+
             {/* Vänster box: Recent projects */}
             <div>
                 <h2 className="text-xl font-bold mb-3">Recent projects</h2>
@@ -34,7 +34,7 @@ const Split = () => {
 ))}
                 </div>
 
-            </div> 
+            </div>
 
         </section>
     );

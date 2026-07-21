@@ -9,15 +9,15 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="flex items-center justify-center px-4 md:px-8 py-4 md:py-3 border-b border-white/10 relative">
+        <nav className="flex items-center justify-center px-4 md:px-8 py-6 md:py-3 border-b border-white/10 relative">
             
             {/* Logo - absolutely positioned on the left */}
-            <div className="absolute left-4 md:left-8 font-bold text-xl tracking-tighter">
+            <div className="absolute left-4 md:left-8 font-bold text-xl tracking-tighter" >
                 <Link to="/" className="hover:text-teal-400 transition-colors">ADAMH</Link>
             </div>
 
             {/* Desktop Navigation Links - centered in the navbar */}
-            <div className="hidden md:flex gap-6 text-sm font-medium items-center">
+            <div className="hidden md:flex gap-6 text-medium font-medium items-center">
                 <Link to="/" className="hover:text-teal-400 transition-colors">Home</Link>
                 <Link to="/about" className="hover:text-teal-400 transition-colors">About</Link>
                 <Link to="/projects" className="hover:text-teal-400 transition-colors">Projects</Link>
@@ -64,32 +64,32 @@ const Navbar = () => {
 
             {/* Mobile Dropdown Menu - full width, high z-index to ensure visibility */}
             <div
-                className={`md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 z-50 transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
+                className={`md:hidden absolute top-full left-0 right-0 bg-black/30 backdrop-blur-xl border-b border-white/10 z-50 transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
                 style={{ zIndex: 1000 }}
             >
-                <div className="flex flex-col items-center py-6 space-y-4">
+                <div className="text-medium font-medium flex flex-col items-center py-4 space-y-3">
                     <Link
                         to="/"
-                        className="text-sm font-medium hover:text-teal-400 transition-colors px-4 py-2 w-full text-center"
+                        className="hover:text-teal-400 transition-colors px-4 py-2 w-full text-center"
                         onClick={() => setIsOpen(false)}
                     >
                         Home
                     </Link>
                     <Link
                         to="/about"
-                        className="text-sm font-medium hover:text-teal-400 transition-colors px-4 py-2 w-full text-center"
+                        className="hover:text-teal-400 transition-colors px-4 py-2 w-full text-center"
                         onClick={() => setIsOpen(false)}
                     >
                         About
                     </Link>
                     <Link
                         to="/projects"
-                        className="text-sm font-medium hover:text-teal-400 transition-colors px-4 py-2 w-full text-center"
+                        className="hover:text-teal-400 transition-colors px-4 py-2 w-full text-center"
                         onClick={() => setIsOpen(false)}
                     >
                         Projects
                     </Link>
-                    <div className="px-4 py-2">
+
                         <Link
                             to="/contact"
                             className="border border-teal-500/30 text-teal-400 px-4 py-2 rounded-lg hover:bg-teal-500/10 transition-all inline-block"
@@ -97,7 +97,7 @@ const Navbar = () => {
                         >
                             Contact
                         </Link>
-                    </div>
+
                 </div>
             </div>
 

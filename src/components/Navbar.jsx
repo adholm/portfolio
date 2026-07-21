@@ -9,10 +9,10 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="flex items-center justify-between px-4 md:px-8 py-3 border-b border-white/10 relative">
+        <nav className="flex items-center justify-center px-4 md:px-8 py-3 border-b border-white/10 relative">
             
-            {/* Logo - always visible on the left */}
-            <div className="font-bold text-xl tracking-tighter">
+            {/* Logo - absolutely positioned on the left */}
+            <div className="absolute left-4 md:left-8 font-bold text-xl tracking-tighter">
                 <Link to="/" className="hover:text-teal-400 transition-colors">ADAMH</Link>
             </div>
 
@@ -26,10 +26,10 @@ const Navbar = () => {
                 </Link>
             </div>
 
-            {/* Hamburger Menu Button - visible only on mobile */}
+            {/* Hamburger Menu Button - visible only on mobile, positioned on the right */}
             <button
                 onClick={toggleMenu}
-                className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500/50"
+                className="md:hidden absolute right-4 p-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500/50"
                 aria-label="Toggle menu"
                 aria-expanded={isOpen}
             >

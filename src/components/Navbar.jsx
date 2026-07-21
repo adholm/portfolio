@@ -16,8 +16,11 @@ const Navbar = () => {
                 <Link to="/" className="hover:text-teal-400 transition-colors">ADAMH</Link>
             </div>
 
-            {/* Desktop Navigation Links - hidden on mobile */}
-            <div className="hidden md:flex gap-6 text-sm font-medium items-center ml-auto">
+            {/* Spacer to push desktop links to center */}
+            <div className="flex-1 hidden md:block"></div>
+
+            {/* Desktop Navigation Links - hidden on mobile, centered */}
+            <div className="hidden md:flex gap-6 text-sm font-medium items-center">
                 <Link to="/" className="hover:text-teal-400 transition-colors">Home</Link>
                 <Link to="/about" className="hover:text-teal-400 transition-colors">About</Link>
                 <Link to="/projects" className="hover:text-teal-400 transition-colors">Projects</Link>
@@ -25,6 +28,9 @@ const Navbar = () => {
                     Contact
                 </Link>
             </div>
+
+            {/* Spacer to balance the logo on the left */}
+            <div className="flex-1 hidden md:block"></div>
 
             {/* Hamburger Menu Button - visible only on mobile */}
             <button

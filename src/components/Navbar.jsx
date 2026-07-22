@@ -12,8 +12,14 @@ const Navbar = () => {
         <nav className="flex items-center justify-center px-4 md:px-8 py-6 md:py-3 border-b border-white/10 relative">
             
             {/* Logo - absolutely positioned on the left */}
-            <div className="absolute left-4 md:left-8 font-bold text-xl tracking-tighter" >
-                <Link to="/" className="hover:text-teal-400 transition-colors">ADAMH</Link>
+            <div className="absolute left-4 md:left-8">
+            <Link to="/">
+            <img
+            src="/images/group2.png"
+            alt="ADAMH Logo"
+            className="h-8 md:h-8 w-auto hover:opacity-80 transition-opacity"
+            />
+            </Link>
             </div>
 
             {/* Desktop Navigation Links - centered in the navbar */}

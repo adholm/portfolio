@@ -3,7 +3,7 @@ const ProjectsPage = () => {
         {
             id: "portfolio",
             name: "Portfolio Website",
-            status: "ongoing",
+            status: "active",
             image: "https://images.unsplash.com/photo-1592609931095-54a2168ae893?q=80&w=1170&auto=format&fit=crop",
             desc: "Fullstack development of a VPS-hosted portfolio website focusing on performance, security, and a minimalist UI.",
             tags: ["React", "Tailwind CSS", "VPS", "Rocky Linux", "Git", "CI/CD Automation", "SSL"]
@@ -78,8 +78,8 @@ const ProjectsPage = () => {
 
             {/* Status Ribbon - Nu med ren genomskinlighet utan blur */}
             <div className={`absolute top-2 left-2 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider z-20
-                ${project.status === 'ongoing' ? 'bg-sky-600/70 text-white' : 'bg-teal-600/70 text-white'}`}>
-                {project.status === 'ongoing' ? 'Ongoing' : 'Completed'}
+                ${project.status === 'active' ? 'bg-sky-600/70 text-white' : 'bg-teal-600/70 text-white'}`}>
+                {project.status === 'active' ? 'Active' : 'Completed'}
                 </div>
                 </div>
 

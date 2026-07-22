@@ -6,7 +6,7 @@ const Projects = () => {
         {
             id: "portfolio",
             name: "Fullstack Portfolio",
-            status: "ongoing",
+            status: "active",
             image: "https://images.unsplash.com/photo-1592609931095-54a2168ae893?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             desc: "Fullstack development of a VPS-hosted portfolio website using React & Tailwind."
         },
@@ -41,7 +41,7 @@ const Projects = () => {
 
             {/* Clickable "Recent projects" header */}
             <div className="text-sm uppercase tracking-wider font-semibold text-center text-gray-400 mb-5 relative z-10">
-                <Link to="/projects" className="hover:text-teal-400 hover:underline transition-colors">
+                <Link to="/projects" className="hover:text-teal-400 transition-colors">
                     Recent projects
                 </Link>
             </div>
@@ -65,8 +65,8 @@ const Projects = () => {
                             />
                             {/* Ribbon som visar projektets status */}
                             <div className={`absolute top-2 left-2 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider z-20
-                            ${project.status === 'ongoing' ? 'bg-sky-600/70 text-white' : 'bg-teal-600/70 text-white'}`}>
-                                {project.status === 'ongoing' ? 'Ongoing' : 'Completed'}
+                            ${project.status === 'active' ? 'bg-sky-600/70 text-white' : 'bg-teal-600/70 text-white'}`}>
+                                {project.status === 'active' ? 'Active' : 'Completed'}
                             </div>
                         </div>
 

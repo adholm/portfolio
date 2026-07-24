@@ -4,10 +4,7 @@ const AboutPage = () => {
         <section className="relative flex-1 w-full flex flex-col pt-8 pb-4 overflow-hidden">
 
         {/* Bakgrundsbild */}
-        <div
-        className="absolute inset-0 bg-cover bg-center scale-105 z-0"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1651497111372-9107c1a5d9a0')" }}
-        ></div>
+
 
         {/* Ren oskärpa (blur) */}
         <div className="absolute inset-0 backdrop-blur-2xl z-0"></div>

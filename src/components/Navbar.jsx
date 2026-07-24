@@ -9,7 +9,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="flex items-center justify-center px-4 md:px-8 py-6 md:py-3 border-b border-white/10 relative">
+        <nav className="flex items-center justify-center px-4 md:px-8 py-6 md:py-2 relative bg-black backdrop-blur-sm">
             
             {/* Logo - absolutely positioned on the left */}
             <div className="absolute left-4 md:left-8">
@@ -17,7 +17,7 @@ const Navbar = () => {
             <img
             src="/images/group2.png"
             alt="ADAMH Logo"
-            className="h-8 md:h-8 w-auto hover:opacity-80 transition-opacity"
+            className="h-6 md:h-8 w-auto hover:opacity-80 transition-opacity"
             />
             </Link>
             </div>

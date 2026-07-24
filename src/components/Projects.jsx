@@ -35,14 +35,11 @@ const Projects = () => {
 
     return (
         /* pt-10 minskar avståndet uppåt till Hero, pb-20 behåller luft nedåt */
-        <section className="max-w-6xl mx-auto pt-5 px-4 sm:px-8 border-t border-white/10 relative overflow-hidden">
-            {/* Animated gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-900/20 to-transparent animate-pulse-slow -z-10"></div>
-
-            {/* Clickable "Recent projects" header */}
-            <div className="text-sm uppercase tracking-wider font-semibold text-center text-gray-400 mb-5 relative z-10">
+        <section className="max-w-6xl mx-auto py-6 px-4 sm:px-8 bg-black/30 backdrop-blur-2xl rounded-2xl">
+        {/* Clickable header */}
+        <div className="text-sm uppercase tracking-wider font-semibold text-center text-gray-300 mb-5">
                 <Link to="/projects" className="hover:text-teal-400 transition-colors">
-                    Recent projects
+                    Latest projects
                 </Link>
             </div>
 
@@ -53,15 +50,15 @@ const Projects = () => {
                         href={`/projects#${project.id}`}
                         key={project.id}
                         /* group-klass tillåter oss att styla barnen (som bilden) vid hover */
-                        className="group bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-900/50 hover:border-teal-500/20 transition-all duration-700"
+                        className="group flex flex-col bg-black/20 rounded-2xl overflow-hidden border border-white/10 hover:border-teal-500/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)]"
                     >
                         {/* Bilder för projektkorten med fast proportion (aspect-video) */}
-                        <div className="aspect-video w-full overflow-hidden relative">
+                        <div className="h-36 w-full overflow-hidden relative border-b border-white/10">
                             <img
                                 src={project.image}
                                 alt={project.name}
                                 /* scale skapar zoom-effekt vid hover */
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
                             {/* Ribbon som visar projektets status */}
                             <div className={`absolute top-2 left-2 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider z-20

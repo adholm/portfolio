@@ -10,7 +10,8 @@ import AboutPage from "./pages/AboutPage";
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-black text-white">
+    <div className="flex flex-col min-h-screen text-white bg-cover bg-center bg-fixed bg-no-repeat"
+    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1651497111372-9107c1a5d9a0')" }}>
         
         <Navbar />
 

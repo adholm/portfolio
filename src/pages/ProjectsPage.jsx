@@ -22,7 +22,7 @@ const ProjectsPage = () => {
             status: "completed",
             image: "https://images.unsplash.com/photo-1761998066489-4f32b9a4dff8?q=80&w=1032&auto=format&fit=crop",
             desc: "Developed a scalable, user-centric UI prototype for a modern mobile banking application.",
-            tags: ["Figma", "UI/UX", "Prototyping", "Agile Framework (Scrum)", "Dynamic Scaling"]
+            tags: ["Figma", "UI/UX", "Prototyping", "SCRUM", "Dynamic Scaling"]
         },
         {
             id: "mr-3dui",
@@ -50,7 +50,7 @@ const ProjectsPage = () => {
         Latest projects
         </h1>
         <p className="text-gray-300 text-xs sm:text-sm leading-relaxed drop-shadow-md">
-        An in-depth look at my latest work across cybersecurity, front- & backend development, and UI/UX design.
+        My latest work across cybersecurity, front- & backend development and UI/UX design.
         </p>
         </div>
 
@@ -96,11 +96,11 @@ const ProjectsPage = () => {
 
             {/* Tech Tags */}
             <div className="mt-3.5 pt-2.5 border-t border-white/10">
-            <div className="flex flex-wrap gap-1">
+            <div className="flex flex-wrap gap-1.5">
             {project.tags.map((tag, index) => (
                 <span
                 key={index}
-                className="text-[9px] font-mono text-teal-300 bg-teal-500/10 border border-teal-500/20 px-1.5 py-0.5 rounded"
+                className="text-[10px] font-mono text-teal-300 bg-teal-500/10 border border-teal-500/20 px-1.5 py-0.5 rounded"
                 >
                 {tag}
                 </span>

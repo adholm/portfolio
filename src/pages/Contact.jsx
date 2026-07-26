@@ -2,14 +2,9 @@ const Contact = () => {
     return (
         <section className="relative flex-1 flex items-center py-16 md:py-20 overflow-hidden">
 
-        {/* Bakgrundsbild */}
-        <div
-        className="absolute inset-0 bg-cover bg-center scale-105 z-0"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1651497111372-9107c1a5d9a0')" }}
-        ></div>
 
         {/* Ren oskärpa (blur) */}
-        <div className="absolute inset-0 backdrop-blur-xl z-0"></div>
+        <div className="absolute inset-0 backdrop-blur-sm z-0"></div>
 
         {/* Innehållet */}
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-8">

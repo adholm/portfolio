@@ -35,76 +35,80 @@ const ProjectsPage = () => {
     ];
 
     return (
-        /* pt-8 och pb-4 ger sektionen en stabil ram i topp och botten */
-        <section className="relative flex-1 w-full flex flex-col pt-8 pb-4 overflow-hidden">
+        <section className="relative flex-1 w-full flex flex-col justify-center py-6 md:py-10 overflow-hidden">
 
-        {/* Bakgrundsbild */}
-        <div
-        className="absolute inset-0 bg-cover bg-center scale-105 z-0"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1651497111372-9107c1a5d9a0')" }}
-        ></div>
 
-        {/* Ren oskärpa (blur) */}
-        <div className="absolute inset-0 backdrop-blur-2xl z-0"></div>
+        {/* Ren oskärpa (blur) utan mörktoning */}
+        <div className="absolute inset-0 backdrop-blur-sm z-0"></div>
 
-        {/* Innehålls-container: "flex-1 flex flex-col" låter denna container ta upp hela skärmhöjden */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 flex-1 flex flex-col items-center">
+        {/* Innehålls-container med avsamlad bredd max-w-4xl */}
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 flex-1 flex flex-col justify-center items-center my-auto">
 
-        {/* HEADER: Helt vanlig flödesplacering, men med mindre bottenmarginal (mb-2) */}
-        <div className="text-center mb-2 flex flex-col items-center">
-        <h1 className="text-3xl lg:text-4xl font-bold mb-1 tracking-tighter text-white drop-shadow-lg">
+        {/* HEADER - Gott om luft nedåt (mb-6 md:mb-8) */}
+        <div className="text-center mb-6 md:mb-8 max-w-xl">
+        <h1 className="text-2xl sm:text-3xl font-extrabold mb-1 tracking-tighter text-white drop-shadow-lg">
         Latest projects
         </h1>
-        <p className="text-gray-300 text-sm max-w-xl leading-relaxed drop-shadow-md">
+        <p className="text-gray-300 text-xs sm:text-sm leading-relaxed drop-shadow-md">
         An in-depth look at my latest work across cybersecurity, front- & backend development, and UI/UX design.
         </p>
         </div>
 
-        {/* PROJEKT-GALLERI: "my-auto" centrerar denna del helt magiskt i det tomma utrymmet som finns kvar */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full max-w-4xl my-auto">
+        {/* PROJEKT-GRID: Perfekt balanserade kort i 2-kolumns layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
         {projects.map((project) => (
-            <a
-            href={`#${project.id}`}
+            <div
+            id={project.id}
             key={project.id}
-            className="group flex flex-col bg-black/20 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/10 hover:border-teal-500/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)]"
+            className="group flex flex-col bg-black/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/15 hover:border-teal-400/60 transition-all duration-500 hover:shadow-[0_0_25px_rgba(20,184,166,0.18)] hover:-translate-y-1 shadow-xl shadow-black/50"
             >
-            {/* Bildbehållare (h-36) */}
-            <div className="h-36 w-full overflow-hidden relative border-b border-white/10">
+            {/* Bildbehållare med bra proportioner (h-32 sm:h-36) */}
+            <div className="h-32 sm:h-36 w-full overflow-hidden relative border-b border-white/10">
             <img
             src={project.image}
             alt={project.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
-            {/* Status Ribbon - Nu med ren genomskinlighet utan blur */}
-            <div className={`absolute top-2 left-2 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider z-20
-                ${project.status === 'active' ? 'bg-sky-600/70 text-white' : 'bg-teal-600/70 text-white'}`}>
-                {project.status === 'active' ? 'Active' : 'Completed'}
-                </div>
-                </div>
+            {/* Mörk gradientöverlagring */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 z-10" />
 
-                {/* Text och Taggar - Luftig padding (p-5) och tydlig text (text-xl / text-sm) */}
-                <div className="p-5 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">
-                {project.name}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-3 flex-1">
-                {project.desc}
-                </p>
+            {/* Status Badge */}
+            <div className={`absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[9px] font-bold uppercase tracking-wider z-20 backdrop-blur-md border ${
+                project.status === 'active'
+                ? 'bg-sky-500/20 text-sky-300 border-sky-500/40'
+                : 'bg-teal-500/20 text-teal-300 border-teal-500/40'
+            }`}>
+            {project.status === 'active' ? 'Active' : 'Completed'}
+            </div>
+            </div>
 
-                {/* Tech Tags - text-[10px] */}
-                <div className="flex flex-wrap gap-1.5 mt-auto">
-                {project.tags.map((tag, index) => (
-                    <span
-                    key={index}
-                    className="text-[10px] uppercase tracking-wider font-semibold text-teal-300 bg-teal-500/10 border border-teal-500/20 px-2 py-0.5 rounded-md"
-                    >
-                    {tag}
-                    </span>
-                ))}
-                </div>
-                </div>
-                </a>
+            {/* Text och Taggar med behaglig padding (p-4) */}
+            <div className="p-4 flex flex-col flex-1 justify-between bg-white/[0.02]">
+            <div>
+            <h2 className="text-base sm:text-lg font-bold text-white group-hover:text-teal-400 transition-colors mb-1.5">
+            {project.name}
+            </h2>
+            <p className="text-gray-300 text-xs leading-relaxed font-normal">
+            {project.desc}
+            </p>
+            </div>
+
+            {/* Tech Tags */}
+            <div className="mt-3.5 pt-2.5 border-t border-white/10">
+            <div className="flex flex-wrap gap-1">
+            {project.tags.map((tag, index) => (
+                <span
+                key={index}
+                className="text-[9px] font-mono text-teal-300 bg-teal-500/10 border border-teal-500/20 px-1.5 py-0.5 rounded"
+                >
+                {tag}
+                </span>
+            ))}
+            </div>
+            </div>
+            </div>
+            </div>
         ))}
         </div>
 

@@ -3,11 +3,9 @@ const AboutPage = () => {
         /* Sektionens grundlayout */
         <section className="relative flex-1 w-full flex flex-col pt-8 pb-4 overflow-hidden">
 
-        {/* Bakgrundsbild */}
-
 
         {/* Ren oskärpa (blur) */}
-        <div className="absolute inset-0 backdrop-blur-2xl z-0"></div>
+        <div className="absolute inset-0 backdrop-blur-sm z-0"></div>
 
         {/* Innehålls-container */}
         <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 flex-1 flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-16 my-auto pb-16 md:pb-24">

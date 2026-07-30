@@ -2,26 +2,26 @@ const ProjectsPage = () => {
     const projects = [
         {
             id: "portfolio",
-            name: "Portfolio Website",
+            name: "Fullstack Portfolio",
             status: "active",
             image: "https://images.unsplash.com/photo-1592609931095-54a2168ae893?q=80&w=1170&auto=format&fit=crop",
-            desc: "Fullstack development of a VPS-hosted portfolio website focusing on performance, security, and a minimalist UI.",
-            tags: ["React", "Tailwind CSS", "VPS", "Rocky Linux", "Git", "CI/CD Automation", "SSL"]
+            desc: "Fullstack development of a VPS-hosted portfolio website using React & Tailwind CSS and custom Nginx & Node.js backend for email contact form functionality.",
+            tags: ["React", "Tailwind CSS", "VPS", "Rocky Linux", "Nginx", "Node.js", "Git", "CI/CD Automation", "SSL"]
         },
         {
             id: "ctf-fra",
-            name: "CTF Challenge",
+            name: "CTF Challenge 'Exfiltratören' by FRA",
             status: "completed",
             image: "https://images.unsplash.com/photo-1645262748907-6827d43215d4",
-            desc: "Solved FRA's cryptography challenge utilizing network analysis and steganography tools.",
-            tags: ["Wireshark", "Stegsolve", "Python", "Bash", "Decryption", "Technical Documentation"]
+            desc: "Solved FRA's CTF/cryptography challenge 'Exfiltratören' using network analysis and steganography tools, as well as scripting.",
+            tags: ["Wireshark", "Stegsolve", "Cryptography", "Python", "Bash", "Decryption", "Technical Documentation", "Scripting", "AI"]
         },
         {
             id: "bank-ui",
             name: "Mobile Bank App UI",
             status: "completed",
             image: "https://images.unsplash.com/photo-1761998066489-4f32b9a4dff8?q=80&w=1032&auto=format&fit=crop",
-            desc: "Developed a scalable, user-centric UI prototype for a modern mobile banking application.",
+            desc: "Developed a scalable UI prototype in Figma for a modern mobile banking application.",
             tags: ["Figma", "UI/UX", "Prototyping", "SCRUM", "Dynamic Scaling"]
         },
         {
@@ -29,7 +29,7 @@ const ProjectsPage = () => {
             name: "Mixed Reality 3D UI",
             status: "completed",
             image: "https://images.unsplash.com/photo-1707167144646-cea7d2027ef7?q=80&w=1170&auto=format&fit=crop",
-            desc: "Designed and prototyped a spatial 3D user interface for an upcoming Mixed Reality headset product.",
+            desc: "Developed a user-centered 3D UI prototype in Blender with applied HCI theory for a Mixed Reality product called 'HappySpace MR'.",
             tags: ["Blender", "Verge3D", "UX", "3DUI", "Interactive Design", "HCI"]
         }
     ];
@@ -50,7 +50,7 @@ const ProjectsPage = () => {
         Latest projects
         </h1>
         <p className="text-gray-300 text-sm sm:text-sm drop-shadow-md">
-        My latest work across front- & backend development as well as cybersecurity.
+        My latest work in front- and backend development, as well as cybersecurity.
         </p>
         </div>
 
@@ -86,10 +86,10 @@ const ProjectsPage = () => {
             {/* Text och Taggar med behaglig padding (p-4) */}
             <div className="p-4 flex flex-col flex-1 justify-between bg-white/[0.02]">
             <div>
-            <h2 className="text-base sm:text-lg font-bold text-white group-hover:text-teal-400 transition-colors mb-1.5">
+            <h2 className="text-md sm:text-md font-bold text-white group-hover:text-teal-400 transition-colors mb-1.5">
             {project.name}
             </h2>
-            <p className="text-gray-300 text-xs leading-relaxed font-normal">
+            <p className="text-gray-300 text-xs sm:text-sm">
             {project.desc}
             </p>
             </div>

@@ -7,14 +7,14 @@ const Projects = () => {
             name: "Fullstack Portfolio",
             status: "active",
             image: "https://images.unsplash.com/photo-1592609931095-54a2168ae893?q=80&w=1170&auto=format&fit=crop",
-            desc: "Fullstack development of a VPS-hosted portfolio website using React & Tailwind."
+            desc: "Fullstack development of a VPS-hosted portfolio website using React & Tailwind CSS and custom Nginx & Node.js backend for email contact form functionality."
         },
         {
             id: "ctf-fra",
-            name: "CTF Challenge",
+            name: "CTF Challenge 'Exfiltratören' by FRA",
             status: "completed",
             image: "https://images.unsplash.com/photo-1645262748907-6827d43215d4",
-            desc: "Solved FRA:s cryptography challenge using Wireshark, Stegsolve & Bash/Python."
+            desc: "Solved FRA's CTF/cryptography challenge 'Exfiltratören' using network analysis, steganography and scripting."
         },
         {
             id: "bank-ui",

@@ -9,7 +9,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="relative z-50 w-full bg-black backdrop-blur-md border-b border-white/5 px-4 md:px-8 py-3 md:py-2">
+        <nav className="relative z-50 w-full bg-black/30 backdrop-blur-md border-b border-white/0 px-4 md:px-8 py-1 md:py-1">
 
         {/* Logo - Låst längst ut i vänstra hörnet av navbaren */}
         <div className="absolute left-4 sm:left-6 md:left-5 top-1/2 -translate-y-1/2 flex items-center">

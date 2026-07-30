@@ -48,6 +48,7 @@ const Contact = () => {
 
     return (
         <section className="relative flex-1 flex items-center py-16 md:py-20 overflow-hidden">
+        {/* Ren oskärpa (blur) */}
         <div className="absolute inset-0 backdrop-blur-sm z-0"></div>
 
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-8">
@@ -65,7 +66,7 @@ const Contact = () => {
         <div className="flex gap-4 drop-shadow-md">
         {/* Email */}
         <a
-        href="mailto:adamholm@mailbox.org"
+        href="mailto:adam@mailbox.org"
         className="flex items-center justify-center w-11 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300"
         aria-label="Email"
         >
@@ -169,21 +170,28 @@ const Contact = () => {
         ></textarea>
         </div>
 
+        {/* Uppdaterad "Send Message"-knapp */}
         <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-teal-500 text-slate-900 font-bold py-4 rounded-lg hover:bg-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300 mt-4 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="group w-full bg-teal-500/10 border border-teal-500/30 text-teal-300 font-semibold py-3.5 px-6 rounded-xl hover:bg-teal-500/20 hover:border-teal-400/60 hover:text-teal-200 hover:shadow-[0_0_20px_rgba(20,184,166,0.25)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 mt-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none flex items-center justify-center gap-2.5"
         >
         {status === 'loading' ? (
             <>
-            <svg className="animate-spin h-5 w-5 text-slate-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg className="animate-spin h-5 w-5 text-teal-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
             <span>Sending...</span>
             </>
         ) : (
-            'Send Message'
+            <>
+            <span>Send Message</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            </>
         )}
         </button>
         </form>

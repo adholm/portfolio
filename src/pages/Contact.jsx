@@ -60,13 +60,13 @@ const Contact = () => {
         Let's connect!
         </h1>
         <p className="text-gray-300 leading-relaxed mb-8 text-base md:text-lg max-w-md drop-shadow-md font-medium">
-        Whether you have a system to secure, an interface to design, or simply want to say hello (or hej) — let's start a conversation.
+        Feel free to use this contact form to message me. Alternatively, you can reach me by clicking on the buttons below.
         </p>
 
         <div className="flex gap-4 drop-shadow-md">
         {/* Email */}
         <a
-        href="mailto:adam@mailbox.org"
+        href="mailto:adamholm@mailbox.org"
         className="flex items-center justify-center w-11 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300"
         aria-label="Email"
         >

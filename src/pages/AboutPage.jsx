@@ -27,7 +27,7 @@ const AboutPage = () => {
 
         {/* Email */}
         <a
-        href="mailto:holmadam@outlook.com"
+        href="mailto:adamholm@mailbox.org"
         className="flex items-center justify-center w-11 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300"
         aria-label="Email"
         >
@@ -76,11 +76,13 @@ const AboutPage = () => {
         </h1>
 
         <p className="text-gray-300 text-sm sm:text-base leading-relaxed drop-shadow-md font-medium">
-        I am a tech enthusiast and fresh graduate in Stockholm with a particular passion for Linux, code, automation, UI/UX design, and cybersecurity.
+        I am a fresh graduate in Stockholm with a particular passion for Linux, code, automation, UI/UX & cybersecurity. I'm actively looking for my first challenge in tech, so <span className="text-white font-semibold underline decoration-teal-400 decoration-2 underline-offset-4 drop-shadow-[0_0_6px_rgba(45,212,191,0.9)]">if you need a driven and adaptable employee willing to learn and do anything — contact me!</span>
         <br /><br />
-        At home I run my favorite Linux-distribution openSUSE Tumbleweed. My journey with Linux started when I was a teenager, and I have always enjoyed challenging myself with new knowledge, problem-solving and studying the underlying structure and logic of systems.
+        I'm currently experimenting with various tech in my home lab, such as network and self-host solutions. In my homelab I run openSUSE partly due to its Snapper integration and alignment with EU's vision of digital sovereignty.
         <br /><br />
-        At the moment I'm focused on improving this website and <span className="text-white font-semibold underline decoration-teal-400 decoration-2 underline-offset-4 drop-shadow-[0_0_6px_rgba(45,212,191,0.9)]">searching for my first challenge in tech</span> — but if I'm not doing that, I'm probably reading a book or swimming!
+        My journey with Linux began when I was a teenager. I've always enjoyed problem-solving, challenging myself with new knowledge and studying the underlying structure and logic of complex systems. Adding another piece of the puzzle to my understanding is the best feeling ever!
+        <br /><br />
+        Oh and, besides tech, I enjoy swimming and reading books.
         </p>
         </div>
 

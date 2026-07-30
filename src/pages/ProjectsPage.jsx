@@ -46,7 +46,7 @@ const ProjectsPage = () => {
 
         {/* HEADER - Gott om luft nedåt (mb-6 md:mb-8) */}
         <div className="text-center mb-6 md:mb-8 max-w-xl">
-        <h1 className="text-2xl sm:text-3xl font-extrabold mb-1 tracking-tighter text-white drop-shadow-lg">
+        <h1 className="text-2xl sm:text-2xl font-extrabold mb-1 tracking-tighter text-white drop-shadow-lg">
         Latest projects
         </h1>
         <p className="text-gray-300 text-sm sm:text-sm drop-shadow-md">
@@ -70,8 +70,6 @@ const ProjectsPage = () => {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
-            {/* Mörk gradientöverlagring */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 z-10" />
 
             {/* Status Badge */}
             <div className={`absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[9px] font-bold uppercase tracking-wider z-20 backdrop-blur-md border ${

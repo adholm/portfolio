@@ -72,7 +72,7 @@ const AboutPage = () => {
         {/* HÖGER SIDA: Textinnehåll med din exakta bio och lysande understrykning */}
         <div className="text-center md:text-left max-w-xl">
         <h1 className="text-3xl lg:text-4xl font-bold mb-4 tracking-tighter text-white drop-shadow-lg">
-        Hi, I'm Adam.
+        Hi, I'm Adam!
         </h1>
 
         <p className="text-gray-300 text-sm sm:text-base drop-shadow-md font-medium">
@@ -80,7 +80,7 @@ const AboutPage = () => {
         <br /><br />
         I'm currently experimenting with various tech in my home lab, such as network and self-host solutions. In my homelab I run openSUSE partly due to its Snapper integration and alignment with EU's vision of digital sovereignty.
         <br /><br />
-        My journey with Linux began when I was a teen. I've always enjoyed problem-solving, challenging myself and studying the underlying structure and logic of complex systems. Adding another piece of the puzzle to my understanding is the best feeling ever!
+        My journey with Linux started when I was a teen. I've always enjoyed problem-solving, challenging myself and studying the underlying structure and logic of complex systems. Adding another piece of the puzzle to my understanding is the best feeling ever!
         </p>
         </div>
 

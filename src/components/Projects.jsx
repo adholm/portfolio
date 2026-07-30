@@ -28,7 +28,7 @@ const Projects = () => {
             name: "Mixed Reality 3D UI",
             status: "completed",
             image: "https://images.unsplash.com/photo-1707167144646-cea7d2027ef7?q=80&w=1170&auto=format&fit=crop",
-            desc: "Developed a user-centered 3D UI prototype in Blender for a Mixed Reality product."
+            desc: "Developed a user-centered 3D UI prototype in Blender with applied HCI theory for a Mixed Reality product called 'HappySpace MR'."
         }
     ];
 
@@ -62,8 +62,6 @@ const Projects = () => {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
 
-            {/* Mörk gradientöverlagring i botten av bilden */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 z-10" />
 
             {/* Status Badge med glasram */}
             <div className={`absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-semibold uppercase tracking-wider z-20 backdrop-blur-md border ${

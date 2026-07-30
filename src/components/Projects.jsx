@@ -43,7 +43,6 @@ const Projects = () => {
         className="text-xs uppercase tracking-wider font-bold text-gray-300 hover:text-teal-400 transition-colors flex items-center gap-2 group"
         >
         <span>Latest projects</span>
-        <span className="text-teal-400 group-hover:translate-x-1.5 transition-transform duration-300">→</span>
         </Link>
         </div>
 

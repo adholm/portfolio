@@ -17,7 +17,7 @@ const Navbar = () => {
         <img
         src="/images/group2.png"
         alt="ADAMH Logo"
-        className="h-7 md:h-7 w-auto hover:opacity-80 transition-opacity"
+        className="h-6 md:h-7 w-auto hover:opacity-80 transition-opacity"
         />
         </Link>
         </div>

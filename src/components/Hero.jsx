@@ -17,7 +17,7 @@ const Hero = () => {
 
         {/* 2. Vertikalt centrerat textblock */}
         <div className="flex flex-col items-center">
-        <h1 className="uppercase text-white text-5xl sm:text-6xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg leading-none">
+        <h1 className="uppercase text-white text-5xl sm:text-5xl md:text-5xl font-extrabold tracking-tighter drop-shadow-lg leading-none">
         Adam Holm
         </h1>
 

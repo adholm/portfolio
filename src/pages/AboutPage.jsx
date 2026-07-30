@@ -75,7 +75,7 @@ const AboutPage = () => {
         Hi, I'm Adam.
         </h1>
 
-        <p className="text-gray-300 text-sm sm:text-base leading-relaxed drop-shadow-md font-medium">
+        <p className="text-gray-300 text-base sm:text-base drop-shadow-md font-medium">
         I am a fresh graduate in Stockholm with a particular passion for Linux, code, automation, UI/UX & cybersecurity. I'm actively looking for my first challenge in tech, so <span className="text-white font-semibold underline decoration-teal-400 decoration-2 underline-offset-4 drop-shadow-[0_0_6px_rgba(45,212,191,0.9)]">if you need a driven and adaptable employee willing to learn and do anything — contact me!</span>
         <br /><br />
         I'm currently experimenting with various tech in my home lab, such as network and self-host solutions. In my homelab I run openSUSE partly due to its Snapper integration and alignment with EU's vision of digital sovereignty.

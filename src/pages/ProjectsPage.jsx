@@ -49,8 +49,8 @@ const ProjectsPage = () => {
         <h1 className="text-2xl sm:text-3xl font-extrabold mb-1 tracking-tighter text-white drop-shadow-lg">
         Latest projects
         </h1>
-        <p className="text-gray-300 text-xs sm:text-sm leading-relaxed drop-shadow-md">
-        My latest work across cybersecurity, front- & backend development and UI/UX design.
+        <p className="text-gray-300 text-sm sm:text-sm drop-shadow-md">
+        My latest work across front- & backend development as well as cybersecurity.
         </p>
         </div>
 

@@ -23,7 +23,7 @@ const Navbar = () => {
         </div>
 
         {/* Centrerad behållare för navigeringslänkarna på skrivbord */}
-        <div className="max-w-6xl mx-auto flex items-center justify-center relative min-h-[36px] md:min-h-[32px]">
+        <div className="max-w-6xl mx-auto flex items-center justify-center relative min-h-[36px] md:min-h-[36px]">
 
         {/* Desktop Navigation Links - Centrerade */}
         <div className="hidden md:flex gap-6 text-sm font-medium items-center">
@@ -80,7 +80,7 @@ const Navbar = () => {
             : 'max-h-0 opacity-0 py-0 px-6 overflow-hidden pointer-events-none'
         }`}
         >
-        <div className="flex flex-col items-center space-y-2 text-base font-medium">
+        <div className="flex flex-col items-center space-y-2 text-sm font-medium">
         <Link
         to="/"
         className="w-full text-gray-200 hover:text-teal-400 hover:bg-white/5 px-4 py-2 rounded-xl transition-all text-center"

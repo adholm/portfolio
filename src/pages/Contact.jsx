@@ -60,7 +60,7 @@ const Contact = () => {
         Let's talk!
         </h1>
         <p className="text-gray-300 mb-5 text-base md:text-lg max-w-md drop-shadow-md font-medium">
-        <span className="text-white font-semibold underline decoration-teal-400 decoration-2 underline-offset-2 drop-shadow-[0_0_6px_rgba(45,212,191,0.9)]">Need a driven and adaptable employee for your tech company?</span> Write something in the form and I'll get back to you via email. Alternatively, you can reach me through LinkedIn.
+        <span className="text-white font-semibold underline decoration-teal-400 decoration-2 underline-offset-2 drop-shadow-[0_0_6px_rgba(45,212,191,0.9)]">Need a driven and adaptable employee for your tech company?</span> Write something in the form and I'll get back to you via email as soon as I can.
         </p>
 
         <div className="flex gap-4 drop-shadow-md">

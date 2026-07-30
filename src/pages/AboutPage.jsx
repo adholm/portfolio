@@ -80,9 +80,9 @@ const AboutPage = () => {
         <br /><br />
         I'm currently experimenting with various tech in my home lab, such as network and self-host solutions. In my homelab I run openSUSE partly due to its Snapper integration and alignment with EU's vision of digital sovereignty.
         <br /><br />
-        My journey with Linux began when I was a teen. I've always enjoyed problem-solving, challenging myself with new knowledge and studying the underlying structure and logic of complex systems. Adding another piece of the puzzle to my understanding is the best feeling ever!
+        My journey with Linux began when I was a teen. I've always enjoyed problem-solving, challenging myself and studying the underlying structure and logic of complex systems. Adding another piece of the puzzle to my understanding is the best feeling ever!
         <br /><br />
-        Apart from tech, I enjoy swimming and reading books. :)
+        Apart from tech, I enjoy swimming and reading books! 🏊🏻‍♂️📚
         </p>
         </div>
 

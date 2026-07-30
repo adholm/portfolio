@@ -9,7 +9,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="relative z-50 w-full bg-black/30 backdrop-blur-md border-b border-white/0 px-4 md:px-8 py-1 md:py-1">
+        <nav className="relative z-50 w-full bg-black backdrop-blur-md border-b border-white/5 px-4 md:px-8 py-1 md:py-1">
 
         {/* Logo - Låst längst ut i vänstra hörnet av navbaren */}
         <div className="absolute left-4 sm:left-6 md:left-5 top-1/2 -translate-y-1/2 flex items-center">
@@ -17,7 +17,7 @@ const Navbar = () => {
         <img
         src="/images/group2.png"
         alt="ADAMH Logo"
-        className="h-6 md:h-7 w-auto hover:opacity-80 transition-opacity"
+        className="h-6 md:h-6 w-auto hover:opacity-80 transition-opacity"
         />
         </Link>
         </div>
@@ -26,13 +26,13 @@ const Navbar = () => {
         <div className="max-w-6xl mx-auto flex items-center justify-center relative min-h-[36px] md:min-h-[32px]">
 
         {/* Desktop Navigation Links - Centrerade */}
-        <div className="hidden md:flex gap-6 text-medium font-medium items-center">
+        <div className="hidden md:flex gap-6 text-sm font-medium items-center">
         <Link to="/" className="text-gray-200 hover:text-teal-400 transition-colors">Home</Link>
         <Link to="/about" className="text-gray-200 hover:text-teal-400 transition-colors">About</Link>
         <Link to="/projects" className="text-gray-200 hover:text-teal-400 transition-colors">Projects</Link>
         <Link
         to="/contact"
-        className="border border-teal-500/40 text-teal-400 px-3 py-2 rounded-lg hover:bg-teal-500/10 hover:border-teal-500/60 transition-all font-medium"
+        className="border border-teal-500/40 text-teal-400 px-2 py-1 rounded-lg hover:bg-teal-500/10 hover:border-teal-500/60 transition-all font-medium"
         >
         Contact
         </Link>
@@ -74,7 +74,7 @@ const Navbar = () => {
 
         {/* Mobile Dropdown Menu */}
         <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-black/30 backdrop-blur-2xl border-b border-teal-500/20 shadow-2xl transition-all duration-300 ease-in-out z-50 ${
+        className={`md:hidden absolute top-full left-0 right-0 bg-black backdrop-blur-2xl border-b border-teal-500/20 shadow-2xl transition-all duration-300 ease-in-out z-50 ${
             isOpen
             ? 'max-h-80 opacity-100 py-4 px-6 pointer-events-auto'
             : 'max-h-0 opacity-0 py-0 px-6 overflow-hidden pointer-events-none'

@@ -1,17 +1,59 @@
+import { useState } from 'react';
+
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('loading');
+        setErrorMessage('');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                setStatus('success');
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                setStatus('error');
+                setErrorMessage(result.message || 'Något gick fel vid sändningen.');
+            }
+        } catch (error) {
+            setStatus('error');
+            setErrorMessage('Kunde inte ansluta till servern. Försök igen senare.');
+        }
+    };
+
     return (
         <section className="relative flex-1 flex items-center py-16 md:py-20 overflow-hidden">
-
-
-        {/* Ren oskärpa (blur) */}
         <div className="absolute inset-0 backdrop-blur-sm z-0"></div>
 
-        {/* Innehållet */}
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-8">
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
-        {/* VÄNSTER SIDA: Text och de nya uppdaterade knapparna */}
+        {/* VÄNSTER SIDA: Text & länkar */}
         <div>
         <h1 className="text-4xl md:text-5xl font-bold mb-3 tracking-tighter text-white drop-shadow-lg">
         Let's connect!
@@ -20,12 +62,10 @@ const Contact = () => {
         Whether you have a system to secure, an interface to design, or simply want to say hello (or hej) — let's start a conversation.
         </p>
 
-        {/* Sociala Länkar - Nu stylade som moderna teal-knappar som matchar About */}
         <div className="flex gap-4 drop-shadow-md">
-
         {/* Email */}
         <a
-        href="mailto:holmadam@outlook.com"
+        href="mailto:adamholm@mailbox.org"
         className="flex items-center justify-center w-11 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300"
         aria-label="Email"
         >
@@ -63,27 +103,88 @@ const Contact = () => {
         <path d="M9 18c-4.51 2-5-2-7-2"/>
         </svg>
         </a>
-
         </div>
         </div>
 
-        {/* HÖGER SIDA: Kontaktformulär */}
+        {/* HÖGER SIDA: Formulär */}
         <div className="bg-black/20 backdrop-blur-2xl p-6 sm:p-8 md:p-10 rounded-2xl border border-white/10 shadow-2xl w-full">
-        <form className="space-y-6">
+        {status === 'success' && (
+            <div className="mb-6 p-4 bg-teal-500/20 border border-teal-500/40 rounded-xl text-teal-300 text-sm font-medium">
+            ✓ Message sent successfully! I'll get back to you as soon as possible.
+            </div>
+        )}
+
+        {status === 'error' && (
+            <div className="mb-6 p-4 bg-rose-500/20 border border-rose-500/40 rounded-xl text-rose-300 text-sm font-medium">
+            ⚠ {errorMessage}
+            </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-        <label htmlFor="name" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">Name</label>
-        <input type="text" id="name" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all" placeholder="Your Name" />
+        <label htmlFor="name" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">
+        Name
+        </label>
+        <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        value={formData.name}
+        onChange={handleChange}
+        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all"
+        placeholder="Your Name"
+        />
         </div>
+
         <div>
-        <label htmlFor="email" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">Email</label>
-        <input type="email" id="email" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all" placeholder="you@example.com" />
+        <label htmlFor="email" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">
+        Email
+        </label>
+        <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        value={formData.email}
+        onChange={handleChange}
+        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all"
+        placeholder="you@example.com"
+        />
         </div>
+
         <div>
-        <label htmlFor="message" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">Message</label>
-        <textarea id="message" rows="5" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all resize-none" placeholder="How can we work together?"></textarea>
+        <label htmlFor="message" className="block text-xs uppercase tracking-widest text-gray-300 mb-2 font-semibold">
+        Message
+        </label>
+        <textarea
+        id="message"
+        name="message"
+        required
+        rows="5"
+        value={formData.message}
+        onChange={handleChange}
+        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 transition-all resize-none"
+        placeholder="How can we work together?"
+        ></textarea>
         </div>
-        <button type="button" className="w-full bg-teal-500 text-slate-900 font-bold py-4 rounded-lg hover:bg-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300 mt-4">
-        Send Message
+
+        <button
+        type="submit"
+        disabled={status === 'loading'}
+        className="w-full bg-teal-500 text-slate-900 font-bold py-4 rounded-lg hover:bg-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300 mt-4 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        >
+        {status === 'loading' ? (
+            <>
+            <svg className="animate-spin h-5 w-5 text-slate-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>Sending...</span>
+            </>
+        ) : (
+            'Send Message'
+        )}
         </button>
         </form>
         </div>

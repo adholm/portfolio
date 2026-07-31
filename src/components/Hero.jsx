@@ -5,7 +5,7 @@ const Hero = () => {
         <section className="w-full relative flex flex-col items-center justify-center py-3 sm:py-4 md:py-6">
         <div className="relative z-10 max-w-2xl mx-auto text-center px-4 flex flex-col items-center gap-2.5 sm:gap-3.5">
 
-        {/* 1. Profilbild (Pyttelite större för både mobil och dator) */}
+        {/* 1. Profilbild */}
         <div className="relative group">
         <div className="absolute -inset-1 bg-gradient-to-r from-teal-500/30 to-emerald-500/30 rounded-full blur-lg opacity-30 group-hover:opacity-60 transition duration-500"></div>
         <img
@@ -26,10 +26,10 @@ const Hero = () => {
         </p>
         </div>
 
-        {/* 3. Nätt, transparent teal-knapp */}
+        {/* 3. Diskret, frostad glass-knapp med hög läsbarhet */}
         <Link
         to="/about"
-        className="mt-0.5 px-3 py-1 rounded-full bg-transparent border border-teal-500/30 text-xs font-medium text-teal-300 hover:text-teal-200 hover:border-teal-400/70 hover:bg-teal-500/10 hover:shadow-[0_0_12px_rgba(20,184,166,0.2)] transition-all duration-300"
+        className="mt-0.5 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-xs font-medium text-gray-300 hover:text-teal-300 hover:border-teal-500/40 hover:bg-teal-500/10 transition-all duration-300 shadow-sm"
         >
         Read more about me
         </Link>

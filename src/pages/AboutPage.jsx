@@ -22,7 +22,7 @@ const AboutPage = () => {
         </div>
 
         {/* Sociala medier-knappar (Dina exakta teal-knappar) */}
-        <div className="flex gap-4 drop-shadow-md mt-1">
+        <div className="flex gap-3 drop-shadow-md mt-1">
 
         {/* Email */}
         <a

@@ -56,18 +56,18 @@ const Contact = () => {
 
         {/* VÄNSTER SIDA: Text & Sociala länkar */}
         <div className="text-center lg:text-left">
-        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight drop-shadow-lg mb-1 sm:mb-1">
-        Let's connect!
+        <h1 className="uppercase text-white text-2xl sm:text-3xl md:text-3xl font-extrabold tracking-tight drop-shadow-lg mb-1 sm:mb-1">
+        Let's connect.
         </h1>
-        <p className="text-gray-300 text-sm sm:text-base drop-shadow-md font-medium mb-5 max-w-md mx-auto lg:mx-0">Write something in the form and I'll get back to you as soon as I can.
+        <p className="text-gray-300 text-sm sm:text-base drop-shadow-md font-medium mb-5 max-w-md mx-auto lg:mx-0">Send me a message and I'll get back to you as soon as I can!
         </p>
 
         {/* Sociala knappar */}
-        <div className="flex gap-4 justify-center lg:justify-start drop-shadow-md">
+        <div className="flex gap-3 justify-center lg:justify-start drop-shadow-md">
         {/* Email */}
         <a
         href="mailto:adamholm@mailbox.org"
-        className="flex items-center justify-center w-11 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300"
+        className="flex items-center justify-center w-10 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300"
         aria-label="Email"
         >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

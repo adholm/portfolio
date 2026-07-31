@@ -1,19 +1,18 @@
 const AboutPage = () => {
     return (
-        /* Sektionens grundlayout */
-        <section className="relative flex-1 w-full flex flex-col pt-8 pb-4 overflow-hidden">
-
+        /* Sektionens grundlayout: Sänkt topp-padding för bättre vertikal balans */
+        <section className="relative flex-1 w-full flex flex-col justify-center py-4 sm:py-6 md:py-8 overflow-hidden">
 
         {/* Ren oskärpa (blur) */}
         <div className="absolute inset-0 backdrop-blur-sm z-0"></div>
 
-        {/* Innehålls-container */}
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 flex-1 flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-16 my-auto pb-16 md:pb-24">
+        {/* Innehålls-container: Tog bort pb-16 md:pb-24 så my-auto kan centrera naturligt */}
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 flex-1 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 lg:gap-12 my-auto">
 
-        {/* VÄNSTER SIDA: Profilbild + Uppdaterade Sociala medier-knappar */}
-        <div className="flex flex-col items-center gap-5 flex-shrink-0 animate-fade-in">
+        {/* VÄNSTER SIDA: Profilbild + Dina transparenta teal-knappar */}
+        <div className="flex flex-col items-center gap-4 sm:gap-5 flex-shrink-0 animate-fade-in">
 
-        {/* Cirkel-ram för profilbild */}
+        {/* Cirkel-ram för profilbild (Dina exakta storlekar) */}
         <div className="w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border border-white/10 bg-black/30 backdrop-blur-md shadow-2xl">
         <img
         src="/images/pfp2.png"
@@ -22,7 +21,7 @@ const AboutPage = () => {
         />
         </div>
 
-        {/* Sociala medier-knappar (Nu i form av transparenta teal-knappar) */}
+        {/* Sociala medier-knappar (Dina exakta teal-knappar) */}
         <div className="flex gap-4 drop-shadow-md mt-1">
 
         {/* Email */}
@@ -69,13 +68,13 @@ const AboutPage = () => {
         </div>
         </div>
 
-        {/* HÖGER SIDA: Textinnehåll med din exakta bio och lysande understrykning */}
+        {/* HÖGER SIDA: Textinnehåll med din exakta bio */}
         <div className="text-center md:text-left max-w-xl">
-        <h1 className="text-2xl lg:text-3xl font-bold mb-1 tracking-tighter text-white drop-shadow-lg">
+        <h1 className="text-white text-2xl sm:text-3xl md:text-3xl font-extrabold tracking-tight drop-shadow-lg mb-1">
         Hi, I'm Adam.
         </h1>
 
-        <p className="text-gray-300 text-sm sm:text-base drop-shadow-md font-medium">
+        <p className="text-gray-300 text-sm sm:text-base drop-shadow-sm font-medium">
         I am a fresh graduate in Stockholm with a passion for Linux, code, automation, UI/UX & cybersecurity. <span className="text-white font-semibold underline decoration-teal-400 decoration-2 underline-offset-2">I'm actively looking for my first challenge in tech</span>, so if you need a driven and adaptable employee willing to quickly learn your tech stack — contact me!
         <br /><br />
         I'm currently experimenting with various tech in my home lab, such as network and self-host solutions. In my homelab I run openSUSE, partly due to its Snapper integration and support of EU's digital sovereignty.

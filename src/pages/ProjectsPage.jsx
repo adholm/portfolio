@@ -14,7 +14,7 @@ const ProjectsPage = () => {
             status: "completed",
             image: "https://images.unsplash.com/photo-1645262748907-6827d43215d4",
             desc: "Solved FRA's CTF challenge 'Exfiltratören' using network analysis, steganography and scripting in a virtual Kali Linux environment.",
-            tags: ["Wireshark", "Stegsolve", "Cryptography", "Python", "Bash", "Decryption", "Technical Documentation", "Scripting", "AI"]
+            tags: ["Wireshark", "Stegsolve", "Cryptography", "Python", "Bash", "Decryption", "Technical Documentation", "Scripting", "Kali Linux"]
         },
         {
             id: "bank-ui",
@@ -37,7 +37,6 @@ const ProjectsPage = () => {
     return (
         <section className="relative flex-1 w-full flex flex-col justify-center py-6 md:py-10 overflow-hidden">
 
-
         {/* Ren oskärpa (blur) utan mörktoning */}
         <div className="absolute inset-0 backdrop-blur-sm z-0"></div>
 
@@ -46,7 +45,7 @@ const ProjectsPage = () => {
 
         {/* HEADER - Gott om luft nedåt (mb-6 md:mb-8) */}
         <div className="text-center mb-6 md:mb-8 max-w-xl">
-        <h1 className="text-2xl sm:text-2xl font-extrabold mb-1 tracking-tighter text-white drop-shadow-lg">
+        <h1 className="uppercase text-xl sm:text-xl font-bold mb-1 tracking-tight text-white drop-shadow-lg">
         Latest projects
         </h1>
         <p className="text-gray-300 text-sm sm:text-sm drop-shadow-md">
@@ -60,7 +59,7 @@ const ProjectsPage = () => {
             <div
             id={project.id}
             key={project.id}
-            className="group flex flex-col bg-black/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/15 hover:border-teal-400/60 transition-all duration-500 hover:shadow-[0_0_25px_rgba(20,184,166,0.18)] hover:-translate-y-1 shadow-xl shadow-black/50"
+            className="group flex flex-col bg-black/40 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/15 hover:border-teal-400/60 transition-all duration-500 hover:shadow-[0_0_25px_rgba(20,184,166,0.18)] hover:-translate-y-1 shadow-xl shadow-black/50"
             >
             {/* Bildbehållare med bra proportioner (h-32 sm:h-36) */}
             <div className="h-32 sm:h-36 w-full overflow-hidden relative border-b border-white/10">
@@ -69,7 +68,6 @@ const ProjectsPage = () => {
             alt={project.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
-
 
             {/* Status Badge */}
             <div className={`absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[9px] font-bold uppercase tracking-wider z-20 backdrop-blur-md border ${
@@ -82,12 +80,12 @@ const ProjectsPage = () => {
             </div>
 
             {/* Text och Taggar med behaglig padding (p-4) */}
-            <div className="p-4 flex flex-col flex-1 justify-between bg-white/[0.02]">
+            <div className="p-4 flex flex-col flex-1 justify-between bg-white/[0.03]">
             <div>
-            <h2 className="text-md sm:text-md font-bold text-white group-hover:text-teal-400 transition-colors mb-1.5">
+            <h2 className="text-md sm:text-md font-bold text-white group-hover:text-teal-400 transition-colors mb-0.5">
             {project.name}
             </h2>
-            <p className="text-gray-300 text-xs sm:text-sm">
+            <p className="text-gray-300 text-xs leading-relaxed font-normal">
             {project.desc}
             </p>
             </div>

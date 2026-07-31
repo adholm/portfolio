@@ -40,7 +40,7 @@ const Projects = () => {
         <div className="flex items-center justify-center mb-4 pb-2 border-b border-white/10">
         <Link
         to="/projects"
-        className="text-xs uppercase tracking-wider font-bold text-gray-300 hover:text-teal-400 transition-colors flex items-center gap-2 group"
+        className="text-xs uppercase tracking-normal font-bold text-gray-300 hover:text-teal-400 transition-colors flex items-center gap-2 group"
         >
         <span>Latest projects</span>
         </Link>

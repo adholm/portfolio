@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="relative group">
         <div className="absolute -inset-1 bg-gradient-to-r from-teal-500/30 to-emerald-500/30 rounded-full blur-lg opacity-30 group-hover:opacity-60 transition duration-500"></div>
         <img
-        src="/images/pfp.jpeg"
+        src="/images/pfp2.png"
         alt="Adam Holm"
         className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full object-cover border-2 border-white/20 shadow-2xl transition-transform duration-300 group-hover:scale-105"
         />

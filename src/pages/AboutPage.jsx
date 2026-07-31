@@ -16,7 +16,7 @@ const AboutPage = () => {
         {/* Cirkel-ram för profilbild */}
         <div className="w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border border-white/10 bg-black/30 backdrop-blur-md shadow-2xl">
         <img
-        src="/images/pfp.jpeg"
+        src="/images/pfp2.png"
         alt="Adam Holm"
         className="w-full h-full object-cover"
         />

@@ -71,14 +71,14 @@ const AboutPage = () => {
 
         {/* HÖGER SIDA: Textinnehåll med din exakta bio och lysande understrykning */}
         <div className="text-center md:text-left max-w-xl">
-        <h1 className="text-3xl lg:text-4xl font-bold mb-4 tracking-tighter text-white drop-shadow-lg">
-        Hi, I'm Adam!
+        <h1 className="text-2xl lg:text-3xl font-bold mb-1 tracking-tighter text-white drop-shadow-lg">
+        Hi, I'm Adam.
         </h1>
 
         <p className="text-gray-300 text-sm sm:text-base drop-shadow-md font-medium">
-        I am a fresh graduate in Stockholm with a particular passion for Linux, code, automation, UI/UX & cybersecurity. I'm actively looking for my first challenge in tech, so <span className="text-white font-semibold underline decoration-teal-400 decoration-2 underline-offset-2">if you need a driven and adaptable employee willing to quickly learn your tech stack — contact me!</span>
+        I am a fresh graduate in Stockholm with a passion for Linux, code, automation, UI/UX & cybersecurity. <span className="text-white font-semibold underline decoration-teal-400 decoration-2 underline-offset-2">I'm actively looking for my first challenge in tech</span>, so if you need a driven and adaptable employee willing to quickly learn your tech stack — contact me!
         <br /><br />
-        I'm currently experimenting with various tech in my home lab, such as network and self-host solutions. In my homelab I run openSUSE, partly due to its Snapper integration and its support of EU's digital sovereignty.
+        I'm currently experimenting with various tech in my home lab, such as network and self-host solutions. In my homelab I run openSUSE, partly due to its Snapper integration and support of EU's digital sovereignty.
         <br /><br />
         My journey with Linux started when I was a teenager. I've always enjoyed problem-solving, challenging myself and studying the underlying structure and logic of complex systems. Adding another piece of the puzzle to my understanding is the best feeling ever!
         </p>

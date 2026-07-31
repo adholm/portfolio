@@ -45,7 +45,7 @@ const ProjectsPage = () => {
 
         {/* HEADER - Gott om luft nedåt (mb-6 md:mb-8) */}
         <div className="text-center mb-6 md:mb-8 max-w-xl">
-        <h1 className="uppercase text-xl sm:text-xl font-bold tracking-tight text-white drop-shadow-lg">
+        <h1 className="uppercase text-xl sm:text-xl font-bold tracking-tight text-white drop-shadow-lg mb-1">
         Latest projects
         </h1>
         <p className="text-gray-300 text-xs sm:text-sm drop-shadow-md">

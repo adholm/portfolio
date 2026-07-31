@@ -12,7 +12,7 @@ function App() {
     <Router>
     <div className="relative flex flex-col min-h-screen text-white bg-slate-950">
 
-    {/* FIXERAD BAKGRUND: Löser mobil-zoomen och ger perfekt passform */}
+    {/* FIXERAD BAKGRUND */}
     <div
     className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none"
     style={{
@@ -20,7 +20,7 @@ function App() {
     }}
     />
 
-    {/* INNEHÅLL (Ligger ovanpå bakgrunden med z-10) */}
+    {/* INNEHÅLL */}
     <div className="relative z-10 flex flex-col min-h-screen">
     <Navbar />
 
@@ -28,21 +28,17 @@ function App() {
     <Routes>
     {/* HEM-SIDAN */}
     <Route path="/" element={
-      <div className="flex-1 flex flex-col justify-between w-full pt-16 md:pt-0">
-      <div className="flex-1 flex items-center justify-center min-h-[75vh] md:min-h-0 my-auto">
+      <div className="flex-1 flex flex-col justify-between w-full gap-6 sm:gap-8 pt-4 pb-2">
+      <div className="flex-1 flex items-center justify-center my-auto py-2 sm:py-4">
       <Hero />
       </div>
       <Projects />
       </div>
     } />
 
-    {/* PROJEKT-SIDA */}
+    {/* ÖVRIGA SIDOR */}
     <Route path="/projects" element={<ProjectsPage />} />
-
-    {/* KONTAKT-SIDAN */}
     <Route path="/contact" element={<Contact />} />
-
-    {/* ABOUT-SIDA */}
     <Route path="/about" element={<AboutPage />} />
     </Routes>
     </main>

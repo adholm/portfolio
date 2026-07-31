@@ -13,7 +13,7 @@ const ProjectsPage = () => {
             name: "CTF Challenge 'Exfiltratören' by FRA",
             status: "completed",
             image: "https://images.unsplash.com/photo-1645262748907-6827d43215d4",
-            desc: "Solved FRA's CTF/cryptography challenge 'Exfiltratören' using network analysis and steganography tools, as well as scripting.",
+            desc: "Solved FRA's CTF challenge 'Exfiltratören' using network analysis, steganography and scripting in a virtual Kali Linux environment.",
             tags: ["Wireshark", "Stegsolve", "Cryptography", "Python", "Bash", "Decryption", "Technical Documentation", "Scripting", "AI"]
         },
         {

@@ -15,9 +15,9 @@ const Navbar = () => {
         <div className="absolute left-4 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 flex items-center z-20">
         <Link to="/" onClick={() => setIsOpen(false)} className="inline-flex items-center">
         <img
-        src="/images/ADAMHclean.svg"
+        src="/images/AH.svg"
         alt="Logo"
-        className="h-4 sm:h-4 w-auto opacity-90 hover:opacity-100 transition-all duration-200 ease-out hover:drop-shadow-[0_0_12px_rgba(45,212,191,0.85)] hover:brightness-110 hover:scale-[1.04] active:scale-95"
+        className="h-4.5 sm:h-5.5 w-auto opacity-90 hover:opacity-100 transition-all duration-200 ease-out hover:drop-shadow-[0_0_12px_rgba(45,212,191,0.85)] hover:brightness-110 hover:scale-[1.04] active:scale-95"
         />
         </Link>
         </div>

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
@@ -7,9 +7,11 @@ import ProjectsPage from "./pages/ProjectsPage";
 import Contact from "./pages/Contact";
 import AboutPage from "./pages/AboutPage";
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   return (
-    <Router>
     <div className="relative flex flex-col min-h-screen text-white bg-slate-950">
 
     {/* FIXERAD BAKGRUND */}
@@ -24,6 +26,8 @@ function App() {
     <div className="relative z-10 flex flex-col min-h-screen">
     <Navbar />
 
+    {/* Gemensam wrapper för innehåll + footer: Ger 100% sömlös blur på undersidor */}
+    <div className={`flex-grow flex flex-col w-full ${!isHome ? 'backdrop-blur-sm' : ''}`}>
     <main className="flex-grow flex flex-col">
     <Routes>
     {/* HEM-SIDAN */}
@@ -46,6 +50,14 @@ function App() {
     <Footer />
     </div>
     </div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+    <AppContent />
     </Router>
   );
 }

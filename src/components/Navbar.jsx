@@ -9,39 +9,43 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="relative z-50 w-full bg-black backdrop-blur-md border-b border-white/5 px-4 md:px-8 py-1 md:py-1">
+        <nav className="relative z-50 w-full bg-black/50 backdrop-blur-xl border-b border-white/5 px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 shadow-lg shadow-black/40">
 
-        {/* Logo - Låst längst ut i vänstra hörnet av navbaren */}
-        <div className="absolute left-4 sm:left-6 md:left-5 top-1/2 -translate-y-1/2 flex items-center">
-        <Link to="/" onClick={() => setIsOpen(false)}>
+        {/* Logo */}
+        <div className="absolute left-4 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 flex items-center z-20">
+        <Link to="/" onClick={() => setIsOpen(false)} className="inline-flex items-center">
         <img
-        src="/images/group2.png"
-        alt="ADAMH Logo"
-        className="h-5.5 md:h-5.5 w-auto hover:opacity-80 transition-opacity"
+        src="/images/ADAMHclean.svg"
+        alt="Logo"
+        className="h-4 sm:h-4 w-auto transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(45,212,191,0.65)] hover:scale-105"
         />
         </Link>
         </div>
 
-        {/* Centrerad behållare för navigeringslänkarna på skrivbord */}
-        <div className="max-w-6xl mx-auto flex items-center justify-center relative min-h-[36px] md:min-h-[36px]">
+        {/* Centrerad behållare för navigeringslänkarna */}
+        <div className="max-w-6xl mx-auto flex items-center justify-center relative min-h-[32px] sm:min-h-[36px]">
 
-        {/* Desktop Navigation Links - Centrerade */}
-        <div className="hidden md:flex gap-6 text-sm font-medium items-center">
-        <Link to="/" className="text-gray-200 hover:text-teal-400 transition-colors">Home</Link>
-        <Link to="/about" className="text-gray-200 hover:text-teal-400 transition-colors">About</Link>
-        <Link to="/projects" className="text-gray-200 hover:text-teal-400 transition-colors">Projects</Link>
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex gap-8 text-base font-medium items-center">
+        <Link to="/" className="text-white hover:text-teal-400 transition-colors">Home</Link>
+        <Link to="/about" className="text-white hover:text-teal-400 transition-colors">About</Link>
+        <Link to="/projects" className="text-white hover:text-teal-400 transition-colors">Projects</Link>
+
+        {/* Desktop Contact-knapp */}
         <Link
         to="/contact"
-        className="border border-teal-500/40 text-teal-400 px-2 py-1 rounded-lg hover:bg-teal-500/10 hover:border-teal-500/60 transition-all font-medium"
+        className="bg-teal-500/10 backdrop-blur-md border border-teal-500/30 text-teal-300 px-2.5 py-1.5 rounded-lg hover:bg-teal-500/20 hover:border-teal-400/60 hover:text-teal-200 hover:shadow-[0_0_15px_rgba(20,184,166,0.25)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 text-base font-medium shadow-sm"
         >
         Contact
         </Link>
         </div>
 
-        {/* Hamburger Menu Button - Visas endast på mobil (Låst till höger) */}
+        {/* Hamburgarknapp (Mobil) */}
         <button
         onClick={toggleMenu}
-        className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 p-1.5 rounded-lg text-white focus:outline-none"
+        className={`md:hidden absolute right-0 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 rounded-xl text-white hover:text-teal-300 bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-300 focus:outline-none z-20 active:scale-95 ${
+            isOpen ? 'bg-teal-500/10 border-teal-500/40 text-teal-300 shadow-[0_0_12px_rgba(20,184,166,0.2)]' : ''
+        }`}
         aria-label="Toggle menu"
         aria-expanded={isOpen}
         >
@@ -63,9 +67,9 @@ const Navbar = () => {
             </>
         ) : (
             <>
-            <path d="M3 12h18" />
-            <path d="M3 6h18" />
-            <path d="M3 18h18" />
+            <path d="M4 7h16" />
+            <path d="M4 12h16" />
+            <path d="M4 17h16" />
             </>
         )}
         </svg>
@@ -74,43 +78,47 @@ const Navbar = () => {
 
         {/* Mobile Dropdown Menu */}
         <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-black backdrop-blur-2xl border-b border-teal-500/20 shadow-2xl transition-all duration-300 ease-in-out z-50 ${
+        className={`md:hidden absolute top-full left-4 right-4 mt-2.5 bg-black/95 backdrop-blur-3xl border border-white/10 rounded-2xl shadow-2xl shadow-black/90 transition-all duration-300 ease-in-out z-50 overflow-hidden ${
             isOpen
-            ? 'max-h-80 opacity-100 py-4 px-6 pointer-events-auto'
-            : 'max-h-0 opacity-0 py-0 px-6 overflow-hidden pointer-events-none'
+            ? 'max-h-96 opacity-100 py-4 px-3 translate-y-0 pointer-events-auto'
+            : 'max-h-0 opacity-0 py-0 px-3 -translate-y-2 pointer-events-none border-transparent'
         }`}
         >
-        <div className="flex flex-col items-center space-y-2 text-sm font-medium">
+        <div className="flex flex-col items-center space-y-1.5 text-base font-medium">
         <Link
         to="/"
-        className="w-full text-gray-200 hover:text-teal-400 hover:bg-white/5 px-4 py-2 rounded-xl transition-all text-center"
+        className="w-full text-white hover:text-teal-400 hover:bg-white/5 px-4 py-3 rounded-xl transition-all text-center active:scale-[0.98]"
         onClick={() => setIsOpen(false)}
         >
         Home
         </Link>
+
         <Link
         to="/about"
-        className="w-full text-gray-200 hover:text-teal-400 hover:bg-white/5 px-4 py-2 rounded-xl transition-all text-center"
+        className="w-full text-white hover:text-teal-400 hover:bg-white/5 px-4 py-3 rounded-xl transition-all text-center active:scale-[0.98]"
         onClick={() => setIsOpen(false)}
         >
         About
         </Link>
+
         <Link
         to="/projects"
-        className="w-full text-gray-200 hover:text-teal-400 hover:bg-white/5 px-4 py-2 rounded-xl transition-all text-center"
+        className="w-full text-white hover:text-teal-400 hover:bg-white/5 px-4 py-3 rounded-xl transition-all text-center active:scale-[0.98]"
         onClick={() => setIsOpen(false)}
         >
         Projects
         </Link>
 
-        {/* Contact-knappen är nu self-center med anpassad ram som bara omsluter texten */}
+        {/* Mobile Contact-knapp med anpassad bredd */}
+        <div className="w-full flex justify-center pt-1">
         <Link
         to="/contact"
-        className="self-center border border-teal-500/40 text-teal-300 bg-teal-500/10 hover:bg-teal-500/20 px-3 py-2 rounded-lg transition-all text-center font-medium mt-1"
+        className="bg-teal-500/10 border border-teal-500/30 text-teal-300 px-8 py-2.5 rounded-xl hover:bg-teal-500/20 hover:border-teal-400/50 hover:text-teal-200 active:scale-[0.95] transition-all text-center font-medium shadow-sm"
         onClick={() => setIsOpen(false)}
         >
         Contact
         </Link>
+        </div>
         </div>
         </div>
         </nav>

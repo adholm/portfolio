@@ -1,19 +1,12 @@
 const AboutPage = () => {
     return (
-        /* Sektionens grundlayout: Sänkt topp-padding för bättre vertikal balans */
-        <section className="relative flex-1 w-full flex flex-col justify-center py-4 sm:py-6 md:py-8 overflow-hidden">
+        <section className="relative flex-1 w-full flex flex-col justify-center py-6 sm:py-8 md:py-10 overflow-hidden">
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 flex-1 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 lg:gap-12 my-auto">
 
-        {/* Ren oskärpa (blur) */}
-        <div className="absolute inset-0 backdrop-blur-sm z-0"></div>
+        {/* VÄNSTER SIDA: Balanserad profilbild + knappar */}
+        <div className="flex flex-col items-center gap-5 flex-shrink-0 animate-fade-in">
 
-        {/* Innehålls-container: Tog bort pb-16 md:pb-24 så my-auto kan centrera naturligt */}
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 flex-1 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 lg:gap-12 my-auto">
-
-        {/* VÄNSTER SIDA: Profilbild + Dina transparenta teal-knappar */}
-        <div className="flex flex-col items-center gap-4 sm:gap-5 flex-shrink-0 animate-fade-in">
-
-        {/* Cirkel-ram för profilbild (Dina exakta storlekar) */}
-        <div className="w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border border-white/10 bg-black/30 backdrop-blur-md shadow-2xl">
+        <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border border-white/10 bg-black/30 backdrop-blur-md shadow-2xl">
         <img
         src="/images/pfp2.png"
         alt="Adam Holm"
@@ -21,66 +14,37 @@ const AboutPage = () => {
         />
         </div>
 
-        {/* Sociala medier-knappar (Dina exakta teal-knappar) */}
-        <div className="flex gap-3 drop-shadow-md mt-1">
-
-        {/* Email */}
-        <a
-        href="mailto:adamholm@mailbox.org"
-        className="flex items-center justify-center w-11 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300"
-        aria-label="Email"
-        >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect width="20" height="16" x="2" y="4" rx="2"/>
-        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-        </svg>
+        {/* Sociala medier-knappar (Standard w-11 h-11) */}
+        <div className="flex gap-3 drop-shadow-md">
+        <a href="mailto:adamholm@mailbox.org" className="flex items-center justify-center w-11 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         </a>
-
-        {/* LinkedIn */}
-        <a
-        href="https://linkedin.com/in/adholm"
-        target="_blank"
-        rel="noreferrer"
-        className="flex items-center justify-center w-11 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300"
-        aria-label="LinkedIn"
-        >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-        <rect width="4" height="12" x="2" y="9"/>
-        <circle cx="4" cy="4" r="2"/>
-        </svg>
+        <a href="https://linkedin.com/in/adholm" target="_blank" rel="noreferrer" className="flex items-center justify-center w-11 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
-
-        {/* GitHub */}
-        <a
-        href="https://github.com/adholm"
-        target="_blank"
-        rel="noreferrer"
-        className="flex items-center justify-center w-11 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300"
-        aria-label="GitHub"
-        >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-        <path d="M9 18c-4.51 2-5-2-7-2"/>
-        </svg>
+        <a href="https://github.com/adholm" target="_blank" rel="noreferrer" className="flex items-center justify-center w-11 h-11 bg-teal-500/10 border border-teal-500/20 rounded-xl text-teal-400 hover:bg-teal-500/20 hover:border-teal-500/40 hover:text-teal-300 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-300" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
         </a>
-
         </div>
         </div>
 
-        {/* HÖGER SIDA: Textinnehåll med din exakta bio */}
-        <div className="text-center md:text-left max-w-xl">
-        <h1 className="text-white text-2xl sm:text-3xl md:text-3xl font-extrabold tracking-tight drop-shadow-lg mb-1">
+        {/* HÖGER SIDA: Harmoniserad text */}
+        <div className="text-center md:text-left max-w-lg">
+        <h1 className="text-white text-3xl sm:text-4xl font-extrabold tracking-tight drop-shadow-lg mb-3">
         Hi, I'm Adam.
         </h1>
 
-        <p className="text-gray-300 text-sm sm:text-base drop-shadow-sm font-medium">
-        I am a fresh graduate in Stockholm with a passion for Linux, code, automation, UI/UX & cybersecurity. <span className="text-white font-semibold underline decoration-teal-400 decoration-2 underline-offset-2">I'm actively looking for my first challenge in tech</span>, so if you need a driven and adaptable employee willing to quickly learn your tech stack — contact me!
-        <br /><br />
+        <div className="space-y-4 text-gray-300 text-sm sm:text-base drop-shadow-sm font-medium leading-relaxed">
+        <p>
+        I am a fresh graduate in Stockholm with a passion for Linux, code, automation, UI/UX & cybersecurity. <span className="text-white font-semibold underline decoration-teal-400 decoration-2 underline-offset-4">I'm actively looking for my first challenge in tech</span>, so if you need a driven and adaptable employee willing to quickly learn your tech stack — contact me!
+        </p>
+        <p>
         I'm currently experimenting with various tech in my home lab, such as network and self-host solutions. In my homelab I run openSUSE, partly due to its Snapper integration and support of EU's digital sovereignty.
-        <br /><br />
+        </p>
+        <p>
         My journey with Linux started when I was a teenager. I've always enjoyed problem-solving, challenging myself and studying the underlying structure and logic of complex systems. Adding another piece of the puzzle to my understanding is the best feeling ever!
         </p>
+        </div>
         </div>
 
         </div>

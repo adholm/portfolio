@@ -17,7 +17,7 @@ const Navbar = () => {
         <img
         src="/images/ADAMHclean.svg"
         alt="Logo"
-        className="h-4 sm:h-4 w-auto transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(45,212,191,0.65)] hover:scale-105"
+        className="h-4 sm:h-4 w-auto opacity-90 hover:opacity-100 transition-all duration-200 ease-out hover:drop-shadow-[0_0_12px_rgba(45,212,191,0.85)] hover:brightness-110 hover:scale-[1.04] active:scale-95"
         />
         </Link>
         </div>

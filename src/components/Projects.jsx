@@ -27,7 +27,7 @@ const Projects = () => {
             id: "mr-3dui",
             name: "Mixed Reality 3D UI",
             status: "completed",
-            image: "https://images.unsplash.com/photo-1707167144646-cea7d2027ef7?q=80&w=1170&auto=format&fit=crop",
+            image: "/images/HappySpaceCover.png",
             desc: "Developed a user-centered 3D UI prototype in Blender with applied HCI theory for a Mixed Reality product called 'HappySpace MR'."
         }
     ];

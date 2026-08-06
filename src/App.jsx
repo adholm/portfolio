@@ -14,13 +14,19 @@ function AppContent() {
   return (
     <div className="relative flex flex-col min-h-screen text-white bg-slate-950">
 
-    {/* FIXERAD BAKGRUND */}
+    {/* FIXERAD BAKGRUND (Står stilla för bra prestanda och täckning) */}
     <div
     className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none"
     style={{
       backgroundImage: "url('https://images.unsplash.com/photo-1651497111372-9107c1a5d9a0')",
     }}
     />
+
+    {/* HUVUDGLÖD (Bredare oval som täcker Hero + övre delen av projekten) */}
+    <div className="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[1200px] h-[400px] sm:h-[600px] bg-cyan-500/25 rounded-[100%] blur-[140px] pointer-events-none z-0 animate-glow-slow" />
+
+    {/* SEKUNDÄR GLÖD (Nere till höger för att balansera hela skärmytan) */}
+    <div className="fixed -bottom-20 -right-20 w-[500px] sm:w-[800px] h-[500px] sm:h-[800px] bg-cyan-500/20 rounded-full blur-[160px] pointer-events-none z-0 animate-glow-delayed" />
 
     {/* INNEHÅLL */}
     <div className="relative z-10 flex flex-col min-h-screen">

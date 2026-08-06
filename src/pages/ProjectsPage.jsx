@@ -38,12 +38,12 @@ const ProjectsPage = () => {
         <section className="relative flex-1 w-full flex flex-col py-6 sm:py-8 overflow-hidden">
         <div className="relative z-10 w-full max-w-2xl mx-auto px-4 sm:px-6 flex-1 flex flex-col">
 
-        {/* HEADER */}
+        {/* HEADER - Matchad typografi med övriga sidor */}
         <div className="text-center mb-6 sm:mb-8">
-        <h1 className="text-white text-3xl sm:text-4xl font-extrabold tracking-tight drop-shadow-lg mb-2">
+        <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight drop-shadow-lg mb-2">
         Latest projects
         </h1>
-        <p className="text-gray-300 text-xs sm:text-sm drop-shadow-md leading-relaxed">
+        <p className="text-gray-300 text-sm sm:text-base font-medium drop-shadow-md leading-relaxed">
         My latest work in front- and backend development, and cybersecurity.
         </p>
         </div>
@@ -54,7 +54,6 @@ const ProjectsPage = () => {
             <article
             id={project.id}
             key={project.id}
-            /* Animeringar synkade med Projects.jsx: duration-300, hover:-translate-y-1 & exakt samma hover-glöd */
             className="group flex flex-col w-full bg-black/45 backdrop-blur-xl border border-white/15 rounded-xl overflow-hidden shadow-xl shadow-black/70 hover:border-teal-400/60 hover:shadow-[0_0_20px_rgba(45,212,191,0.2)] hover:-translate-y-1 transition-all duration-300"
             >
             {/* BILD */}
@@ -77,7 +76,7 @@ const ProjectsPage = () => {
 
             {/* INNEHÅLL */}
             <div className="flex flex-col p-4 sm:p-5">
-            <h2 className="text-base sm:text-lg font-bold text-white group-hover:text-teal-400 transition-colors mb-1.5">
+            <h2 className="text-base sm:text-lg font-bold text-white group-hover:text-teal-400 transition-colors mb-0.5">
             {project.name}
             </h2>
 

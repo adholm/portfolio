@@ -7,28 +7,32 @@ const Projects = () => {
             name: "Fullstack Portfolio",
             status: "active",
             image: "https://images.unsplash.com/photo-1592609931095-54a2168ae893?q=80&w=1170&auto=format&fit=crop",
-            desc: "Fullstack development of a VPS-hosted website using React & Tailwind CSS and Nginx & Node.js backend for email functionality."
+            desc: "Fullstack development of a VPS-hosted website using React & Tailwind CSS and custom Nginx & Node.js backend.",
+            tags: ["React", "Tailwind CSS", "VPS", "Rocky Linux", "Nginx", "Node.js", "Git", "CI/CD Automation", "SSL"]
         },
         {
             id: "ctf-fra",
             name: "CTF 'Exfiltratören' by FRA",
             status: "completed",
             image: "https://images.unsplash.com/photo-1645262748907-6827d43215d4",
-            desc: "Solved FRA's CTF challenge 'Exfiltratören' using network analysis, steganography and scripting in a virtual Kali Linux environment."
+            desc: "Solved FRA's CTF challenge 'Exfiltratören' using network analysis, steganography and scripting in Kali Linux.",
+            tags: ["Wireshark", "Python", "Cryptography", "Stegsolve", "Bash", "Decryption", "Technical Documentation", "Scripting", "Kali Linux"]
         },
         {
             id: "bank-ui",
             name: "Mobile Bank App UI",
             status: "completed",
             image: "https://images.unsplash.com/photo-1761998066489-4f32b9a4dff8?q=80&w=1032&auto=format&fit=crop",
-            desc: "Developed a scalable UI prototype in Figma for a mobile bank application."
+            desc: "Developed a scalable UI prototype in Figma for a modern mobile banking application.",
+            tags: ["Figma", "UI/UX", "Prototyping", "SCRUM", "Dynamic Scaling"]
         },
         {
             id: "mr-3dui",
             name: "Mixed Reality 3D UI",
             status: "completed",
             image: "/images/HappySpaceCover.png",
-            desc: "Developed a user-centered 3D UI prototype in Blender with applied HCI theory for a Mixed Reality product called 'HappySpace MR'."
+            desc: "Developed a user-centered 3D UI prototype in Blender with applied HCI theory for 'HappySpace MR'.",
+            tags: ["Blender", "Verge3D", "UX", "3DUI", "Interactive Design", "HCI"]
         }
     ];
 
@@ -40,13 +44,13 @@ const Projects = () => {
         <div className="flex items-center justify-center mb-4 pb-2 border-b border-white/10">
         <Link
         to="/projects"
-        className="text-xs sm:text-sm uppercase tracking-wide font-semibold text-gray-300 hover:text-teal-400 transition-colors flex items-center gap-2"
+        className="text-xs sm:text-sm uppercase tracking-normal font-semibold text-zinc-300 hover:text-teal-400 transition-colors flex items-center gap-2"
         >
         <span>Latest projects</span>
         </Link>
         </div>
 
-        {/* Grid - maximerat för att ta lagom mycket vertikal plats */}
+        {/* Grid - 4 kolumner */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         {projects.map((project) => (
             <Link
@@ -54,8 +58,8 @@ const Projects = () => {
             key={project.id}
             className="group flex flex-col bg-black/40 backdrop-blur-xl rounded-xl overflow-hidden border border-white/15 hover:border-teal-400/60 transition-all duration-300 hover:shadow-[0_0_20px_rgba(45,212,191,0.2)] hover:-translate-y-1 shadow-xl shadow-black/50 relative"
             >
-            {/* Bildbehållare - h-32 är kompakt och ryms perfekt på skärmen */}
-            <div className="h-32 w-full overflow-hidden relative border-b border-white/10">
+            {/* Bildbehållare */}
+            <div className="h-28 w-full overflow-hidden relative border-b border-white/10">
             <img
             src={project.image}
             alt={project.name}
@@ -80,16 +84,36 @@ const Projects = () => {
             </div>
             </div>
 
-            {/* Textinnehåll - Kortare beskrivning förhindrar överdrivet scrollande */}
-            <div className="p-4 flex flex-col flex-1 justify-between bg-white/[0.02]">
+            {/* Textinnehåll & Taggars */}
+            <div className="p-3.5 flex flex-col flex-1 justify-between bg-white/[0.02]">
             <div>
-            <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-teal-400 transition-colors mb-1.5 line-clamp-1">
+            {/* Ursprunglig storlek återställd: text-sm sm:text-base */}
+            <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-teal-400 transition-colors mb-0.5 line-clamp-1">
             {project.name}
             </h3>
-            {/* Max tre rader garanterar konsekvent höjd på alla 4 kort */}
-            <p className="text-gray-400 text-xs sm:text-[13px] leading-relaxed font-normal line-clamp-3">
+            {/* Ursprunglig storlek återställd: text-xs sm:text-[13px] */}
+            <p className="text-zinc-400 text-xs sm:text-[13px] leading-relaxed font-normal line-clamp-2">
             {project.desc}
             </p>
+            </div>
+
+            {/* Tech Stack - Låst till 1 rad */}
+            <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center gap-1.5 overflow-hidden whitespace-nowrap">
+            {project.tags.slice(0, 2).map((tag, index) => (
+                <span
+                key={index}
+                className="text-[10px] font-mono text-teal-300 bg-teal-500/10 border border-teal-500/20 px-2 py-0.5 rounded shrink-0"
+                >
+                {tag}
+                </span>
+            ))}
+
+            {/* +X badge med samma teal-styling som övriga taggar */}
+            {project.tags.length > 2 && (
+                <span className="text-[10px] font-mono text-teal-300 bg-teal-500/10 border border-teal-500/20 px-1.5 py-0.5 rounded shrink-0">
+                +{project.tags.length - 2}
+                </span>
+            )}
             </div>
             </div>
             </Link>

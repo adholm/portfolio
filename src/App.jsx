@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -11,9 +12,11 @@ import ProjectDetail from "./pages/ProjectDetail";
 // Hjälpkomponent för att återställa scrollposition vid sidbyte
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
   return null;
 };
 
@@ -23,6 +26,9 @@ function AppContent() {
 
   return (
     <div className="relative flex flex-col min-h-screen text-white bg-slate-950">
+
+    {/* Återställer scrollpositionen till toppen vid navigering */}
+    <ScrollToTop />
 
     {/* FIXERAD BAKGRUND (Står stilla för bra prestanda och täckning) */}
     <div

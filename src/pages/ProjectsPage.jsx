@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const ProjectsPage = () => {
     const projects = [
         {
@@ -38,7 +40,7 @@ const ProjectsPage = () => {
         <section className="relative flex-1 w-full flex flex-col py-6 sm:py-8 overflow-hidden">
         <div className="relative z-10 w-full max-w-2xl mx-auto px-4 sm:px-6 flex-1 flex flex-col">
 
-        {/* HEADER - Matchad typografi med övriga sidor */}
+        {/* HEADER */}
         <div className="text-center mb-6 sm:mb-8">
         <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight drop-shadow-lg mb-2">
         Latest projects
@@ -51,13 +53,13 @@ const ProjectsPage = () => {
         {/* PROJEKT-FEED */}
         <div className="flex flex-col gap-8 sm:gap-10 pb-12 w-full">
         {projects.map((project) => (
-            <article
-            id={project.id}
+            <Link
+            to={`/projects/${project.id}`}
             key={project.id}
-            className="group flex flex-col w-full bg-black/45 backdrop-blur-xl border border-white/15 rounded-xl overflow-hidden shadow-xl shadow-black/70 hover:border-teal-400/60 hover:shadow-[0_0_20px_rgba(45,212,191,0.2)] hover:-translate-y-1 transition-all duration-300"
+            className="group flex flex-col w-full bg-black/35 hover:bg-black/30 backdrop-blur-xl border border-white/15 rounded-xl overflow-hidden shadow-xl shadow-black/70 hover:border-teal-400/60 hover:shadow-[0_0_20px_rgba(45,212,191,0.2)] hover:-translate-y-1 transition-all duration-300"
             >
             {/* BILD */}
-            <div className="relative w-full h-36 sm:h-44 border-b border-white/10 bg-black/50 overflow-hidden">
+            <div className="relative w-full h-36 sm:h-44 border-b border-white/10 bg-black/40 overflow-hidden">
             <img
             src={project.image}
             alt={project.name}
@@ -76,11 +78,11 @@ const ProjectsPage = () => {
 
             {/* INNEHÅLL */}
             <div className="flex flex-col p-4 sm:p-5">
-            <h2 className="text-base sm:text-lg font-bold text-white group-hover:text-teal-400 transition-colors mb-0.5">
+            <h2 className="text-lg sm:text-xl font-bold text-white group-hover:text-teal-400 transition-colors mb-1">
             {project.name}
             </h2>
 
-            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed font-normal mb-4">
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal mb-4">
             {project.desc}
             </p>
 
@@ -101,7 +103,7 @@ const ProjectsPage = () => {
             </div>
             </div>
             </div>
-            </article>
+            </Link>
         ))}
         </div>
 

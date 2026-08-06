@@ -40,10 +40,10 @@ const Contact = () => {
         {/* VÄNSTER SIDA: Text & Textknappar */}
         <div className="text-center lg:text-left max-w-lg mx-auto lg:mx-0">
         <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight drop-shadow-lg mb-3">
-        Let's connect.
+        Let's connect!
         </h1>
         <p className="text-gray-300 text-sm sm:text-base drop-shadow-md font-medium mb-6 leading-relaxed">
-        Send me a message and I'll get back to you as soon as I can!
+        Send me a message and I'll get back to you as soon as possible.
         </p>
 
         {/* Sociala knappar med ikon + text */}

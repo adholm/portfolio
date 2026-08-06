@@ -6,6 +6,16 @@ import Footer from "./components/Footer";
 import ProjectsPage from "./pages/ProjectsPage";
 import Contact from "./pages/Contact";
 import AboutPage from "./pages/AboutPage";
+import ProjectDetail from "./pages/ProjectDetail";
+
+// Hjälpkomponent för att återställa scrollposition vid sidbyte
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 function AppContent() {
   const location = useLocation();
@@ -50,6 +60,7 @@ function AppContent() {
     <Route path="/projects" element={<ProjectsPage />} />
     <Route path="/contact" element={<Contact />} />
     <Route path="/about" element={<AboutPage />} />
+    <Route path="/projects/:id" element={<ProjectDetail />} />
     </Routes>
     </main>
 
